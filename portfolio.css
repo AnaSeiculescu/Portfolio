@@ -26,4 +26,5 @@ a {
 
 #first-test-btn:hover {
     border: 3px solid lightgray;
+    cursor: pointer;
 }
