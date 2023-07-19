@@ -1,6 +1,6 @@
 
 const container = document.querySelector("#center-container");
-const RADIUS = 250; // adjust to screen size
+const RADIUS = 280; // adjust to screen size
 
 let project_links = ["https://anaseiculescu.github.io/about-me/", "https://anaseiculescu.github.io/breakfast-recipes/", "https://anaseiculescu.github.io/ana_s_color_picker/", "https://anaseiculescu.github.io/collection-map/", "https://anaseiculescu.github.io/to-do-list/"];
 let project_names = ["about me", "breakfast recipes", "color picker", "collection map", "to do list"];
@@ -64,7 +64,7 @@ function createCodeButton(bigButtons) {
         const codeBtn = document.createElement("button");
         codeBtn.textContent = "code";
         codeBtn.classList.add("code-project-button");
-        codeBtn.style.transform = "translate(40%, 50%)";
+        codeBtn.style.transform = "translate(20%, 60%)";
 
         button.appendChild(codeBtn);
 
@@ -80,3 +80,98 @@ function createCodeButton(bigButtons) {
 }
 
 createCodeButton(bigButtons);
+
+
+// creating other buttons on the big circle, buttons that are available when abou me is up
+
+let about_me_links = ["CV", "education", "skils"];
+
+function getAbouMePointsOnCircle(numPoints) {
+    const points = [];
+
+    for (let i = 0; i < numPoints; i++) {
+        const angleDegrees = i * (360 / numPoints) - 35;
+        const { x, y } = getPointOnCircle(angleDegrees);
+        points.push({ x, y });
+    }
+    return points;
+}
+
+function createAboutMeButtonsOnCircle(pointsOnCircle) {
+    const buttons = pointsOnCircle.map(({ x, y }, index) => {
+        const btn = document.createElement("button");
+        btn.textContent = about_me_links[index];
+        btn.style.transform = `translate(${x}px, ${y}px) translate(-50%, -50%)`;
+        btn.classList.add("about-me-buttons");
+
+        container.appendChild(btn);
+
+        // btn.addEventListener("click", function() {
+        //     window.open(project_links[index]);
+        // });
+
+        return btn;
+    });
+
+    return buttons;
+}
+
+const abouMePointsOnCircle = getAbouMePointsOnCircle(3);
+
+createAboutMeButtonsOnCircle(abouMePointsOnCircle);
+
+
+
+const centralButton = document.getElementById("central-circle-button");
+
+let myWorkButtons = document.getElementsByClassName("site-project-button");
+let aboutMeButtons = document.getElementsByClassName("about-me-buttons");
+console.log(aboutMeButtons);
+
+for (let i = 0; i < aboutMeButtons.length; i++) {
+    aboutMeButtons[i].style.display = "block";
+}
+
+centralButton.addEventListener("click", () => {
+
+    // for (let i = 0; i < aboutMeButtons.length; i++) {
+    //     aboutMeButtons[i].style.display = "block";
+    // }
+
+
+
+
+    // let aboutMeText = document.createElement("p");
+    // let myWorkText = document.createElement("p");
+
+    // aboutMeText.textContent = "about me";
+    // myWorkText.textContent = "my work";
+
+    // centralButton.appendChild(aboutMeText);
+    // centralButton.appendChild(myWorkText);
+
+
+
+
+
+    centralButton.classList.toggle("central-button-mywork-up");
+
+    jQuery(aboutMeButtons).toggle(1000, function() {
+        console.log("the about me buttons are gone");
+    });
+
+    jQuery(myWorkButtons).toggle(1000, function(){
+        console.log("the project buttons appear");
+    });
+
+ 
+
+});
+
+// jQuery(document).ready( function() {
+
+//     for (let i = 0; i < aboutMeButtons.length; i++) {
+//         aboutMeButtons[i].style.display = "none";
+//     }
+
+// });

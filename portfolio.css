@@ -9,11 +9,63 @@ body {
     align-items: center;
     justify-content: center;
     height: 100vh;
+    background-color: #0A1612;
 }
 
 #center-container {
     position: relative;
+    display: inline-flex;
 }
+
+.central-button-aboutme-up {
+    width: 150px;
+    height: 150px;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    /* border-top-left-radius: 75px;
+    border-top-right-radius: 75px; */
+    font-size: 14px;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    transition: all 1s;
+    background-color: #F7CE3E;
+}
+
+.central-button-mywork-up {
+    width: 150px;
+    height: 150px;
+    position: absolute;
+    transform: rotate(180deg) translate(50%, 50%);
+    border-radius: 50%;
+    /* border-top-left-radius: 75px;
+    border-top-right-radius: 75px; */
+    font-size: 14px;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    transition: all 1s;
+    background-color: #F7CE3E;
+}
+
+#about-me {
+
+}
+
+#my-work {
+    transform: rotate(180deg);
+}
+
+/* #central-my-work-button {
+    width: 150px;
+    height: 75px;
+    position: absolute;
+    transform: translate(-50%, 0%) rotate(180deg);
+    border-top-left-radius: 75px;
+    border-top-right-radius: 75px;
+    font-size: 14px;
+} */
 
 .site-project-button {
     position: absolute;
@@ -22,14 +74,53 @@ body {
     width: 200px;
     height: 200px;
     border-radius: 50%;
+    display: none;
+    background-color: #C5C1C0;
+    /* transition: all 1s; */
+}
+
+.site-project-button-on {
+    position: absolute;
+    cursor: pointer;
+    text-align: center;  
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    display: block;
+    background-color: #C5C1C0;
+    /* transition: all 1s; */
 }
 
 .code-project-button {
-    width: 50px;
-    height: 50px;
+    width: 60px;
+    height: 60px;
     border-radius: 50%;
     background-color: black;
     text-align: center;
     color: white;
     cursor: cell;
+}
+
+.about-me-buttons {
+    position: absolute;
+    cursor: pointer;
+    text-align: center;  
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    display: block;
+    background-color: #C5C1C0;
+    /* transition: all 1s; */
+}
+
+.about-me-buttons-off {
+    position: absolute;
+    cursor: pointer;
+    text-align: center;  
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    display: none;
+    background-color: #C5C1C0;
+    /* transition: all 1s; */
 }
