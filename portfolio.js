@@ -1,6 +1,6 @@
 
 const container = document.querySelector("#center-container");
-const RADIUS = 280; // adjust to screen size
+const RADIUS = 250; // adjust to screen size
 
 let project_links = ["https://anaseiculescu.github.io/about-me/", "https://anaseiculescu.github.io/breakfast-recipes/", "https://anaseiculescu.github.io/ana_s_color_picker/", "https://anaseiculescu.github.io/collection-map/", "https://anaseiculescu.github.io/to-do-list/"];
 let project_names = ["about me", "breakfast recipes", "color picker", "collection map", "to do list"];
@@ -32,7 +32,11 @@ function getPointsOnCircle(numPoints) {
 function createButtonsOnCircle(pointsOnCircle) {
     const buttons = pointsOnCircle.map(({ x, y }, index) => {
         const btn = document.createElement("button");
-        btn.textContent = project_names[index];
+        const btnTextContent = document.createElement("span");
+        btnTextContent.innerText = project_names[index];
+        btnTextContent.classList.add("flex-items-site-button");
+        // btn.textContent = project_names[index];
+        btn.appendChild(btnTextContent);
         btn.style.transform = `translate(${x}px, ${y}px) translate(-50%, -50%)`;
         btn.classList.add("site-project-button");
 
@@ -55,16 +59,21 @@ createButtonsOnCircle(pointsOnCircle);
 console.log("pointsOnCircle", pointsOnCircle);
 
 
+const centralButton = document.getElementById("central-circle-button");
+
+
 // create a smaller button (linking to the code pages) inside each big circle button
 const bigButtons = createButtonsOnCircle(pointsOnCircle);
 console.log(bigButtons);
 
 function createCodeButton(bigButtons) {
+
     const codeButtons = bigButtons.map((button, index) => {
         const codeBtn = document.createElement("button");
+        codeBtn.classList.add("flex-items-site-button");
         codeBtn.textContent = "code";
-        codeBtn.classList.add("code-project-button");
-        codeBtn.style.transform = "translate(20%, 60%)";
+        codeBtn.classList.add("code-project-buttons");
+        // codeBtn.style.transform = "translate(20%, 60%)";
 
         button.appendChild(codeBtn);
 
@@ -81,6 +90,55 @@ function createCodeButton(bigButtons) {
 
 createCodeButton(bigButtons);
 
+let codeButtons = document.getElementsByClassName("code-project-buttons");
+
+function positionChildren() {
+
+    const childPositions = [
+        { x: '0%', y: '0%' },
+        { x: '0%', y: '0%' },
+        { x: '0%', y: '0%' },
+        { x: '0%', y: '0%' },
+        { x: '0%', y: '0%' }
+    ];
+
+    for (let i = 0; i <= codeButtons.length; i++) {
+
+        childPositions.forEach((position, i) => {
+            codeButtons[i].style.transform = `translate(${position.x}, ${position.y})`;
+            console.log("code btns are here");
+        })
+
+    }
+
+}
+
+positionChildren();
+
+let myWorkButtons = document.getElementsByClassName("site-project-button");
+
+let aboutMeButtons = document.getElementsByClassName("about-me-buttons");
+let aboutMeText = document.getElementById("about-me");
+let myWorkText = document.getElementById("my-work");
+console.log(aboutMeButtons);
+
+function changeFlexItemOrder(itemIndex, newOrder) {
+    const flexItems = document.getElementsByClassName("flex-items-site-button");
+    if (itemIndex < 0 || itemIndex >= flexItems.length) {
+      console.error("Invalid item index!");
+      return;
+    }
+    
+    flexItems[itemIndex].style.order = newOrder;
+  }
+
+for (let i = 0; i < bigButtons.length; i++) {
+    let flexItemsInBigBtn = document.getElementsByClassName("flex-items-site-button");
+    console.log(flexItemsInBigBtn);
+    if (i === 2 || i === 4) {
+        changeFlexItemOrder(1, 0);
+    }
+}
 
 // creating other buttons on the big circle, buttons that are available when abou me is up
 
@@ -120,14 +178,6 @@ const aboutMePointsOnCircle = getAbouMePointsOnCircle(3);
 
 createAboutMeButtonsOnCircle(aboutMePointsOnCircle);
 
-const centralButton = document.getElementById("central-circle-button");
-
-let myWorkButtons = document.getElementsByClassName("site-project-button");
-let aboutMeButtons = document.getElementsByClassName("about-me-buttons");
-let aboutMeText = document.getElementById("about-me");
-let myWorkText = document.getElementById("my-work");
-console.log(aboutMeButtons);
-
 jQuery(centralButton).one('click', function() {
     aboutMeText.textContent = "about me";
     myWorkText.textContent = "my work";
@@ -156,6 +206,7 @@ centralButton.addEventListener("click", () => {
         });
     
         jQuery(myWorkButtons).toggle(1000, function(){
+            // myWorkButtons.classList.toggle("site-project-button-on");
             console.log("the project buttons appear");
         });
     }
@@ -168,4 +219,16 @@ jQuery(document).ready( function() {
         aboutMeButtons[i].style.display = "none";
     }
 
+    for (let i = 0; i < myWorkButtons.length; i++) {
+        myWorkButtons[i].style.display = "none";
+    }
+
 });
+
+
+/*
+
+How to know how many children a "bigButton" has?
+after that, list them in order, what index does they have?
+
+*/

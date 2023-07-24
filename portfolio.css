@@ -9,7 +9,8 @@ body {
     align-items: center;
     justify-content: center;
     height: 100vh;
-    background-color: #0A1612;
+    /* background-color: #0A1612; */
+    background-color: #1A2930;
 }
 
 #center-container {
@@ -23,15 +24,14 @@ body {
     position: absolute;
     transform: translate(-50%, -50%);
     border-radius: 50%;
-    /* border-top-left-radius: 75px;
-    border-top-right-radius: 75px; */
-    font-size: 14px;
+    font-size: 15px;
     display: grid;
     align-items: center;
     justify-content: center;
     transition: all 1s;
     background-color: #F7CE3E;
     cursor: pointer;
+    box-shadow: inset -25px -25px 40px rgba(0,0,0,.5);
 }
 
 .central-button-mywork-up {
@@ -40,19 +40,14 @@ body {
     position: absolute;
     transform: rotate(180deg) translate(50%, 50%);
     border-radius: 50%;
-    /* border-top-left-radius: 75px;
-    border-top-right-radius: 75px; */
-    font-size: 14px;
+    font-size: 15px;
     display: grid;
     align-items: center;
     justify-content: center;
     transition: all 1s;
     background-color: #F7CE3E;
     cursor: pointer;
-}
-
-#about-me {
-
+    box-shadow: inset 25px 25px 40px rgba(0,0,0,.7);
 }
 
 #my-work {
@@ -62,28 +57,36 @@ body {
 .site-project-button {
     position: absolute;
     cursor: pointer;
-    text-align: center;  
+    text-align: center;
+    font-size: 13px;
+    letter-spacing: 0.7px;  
     width: 200px;
     height: 200px;
     border-radius: 50%;
-    display: none;
+    display: flex;
+    /* align-content: space-evenly; */
+    align-items: center;
+    justify-content:space-around;
     background-color: #C5C1C0;
-    /* transition: all 1s; */
+    box-shadow: inset -25px -25px 40px rgba(0,0,0,.7);
 }
 
-.site-project-button-on {
+/* .site-project-button-on {
+    display: flex;
     position: absolute;
+    justify-content: space-evenly;
     cursor: pointer;
-    text-align: center;  
+    text-align: center;
+    font-size: 13px;
+    letter-spacing: 0.7px;  
     width: 200px;
     height: 200px;
     border-radius: 50%;
-    display: block;
     background-color: #C5C1C0;
-    /* transition: all 1s; */
-}
+    box-shadow: inset -25px -25px 40px rgba(0,0,0,.7);
+} */
 
-.code-project-button {
+.code-project-buttons {
     width: 60px;
     height: 60px;
     border-radius: 50%;
@@ -96,11 +99,13 @@ body {
 .about-me-buttons {
     position: absolute;
     cursor: pointer;
-    text-align: center;  
+    text-align: center;
+    font-size: 13px;
+    letter-spacing: 0.7px;
     width: 150px;
     height: 150px;
     border-radius: 50%;
     display: none;
     background-color: #C5C1C0;
-    /* transition: all 1s; */
+    box-shadow: inset -25px -25px 40px rgba(0,0,0,.7);
 }
