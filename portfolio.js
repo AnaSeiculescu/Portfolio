@@ -84,7 +84,7 @@ createCodeButton(bigButtons);
 
 // creating other buttons on the big circle, buttons that are available when abou me is up
 
-let about_me_links = ["CV", "education", "skils"];
+let about_me_links = ["CV", "education", "skills"];
 
 function getAbouMePointsOnCircle(numPoints) {
     const points = [];
@@ -116,62 +116,56 @@ function createAboutMeButtonsOnCircle(pointsOnCircle) {
     return buttons;
 }
 
-const abouMePointsOnCircle = getAbouMePointsOnCircle(3);
+const aboutMePointsOnCircle = getAbouMePointsOnCircle(3);
 
-createAboutMeButtonsOnCircle(abouMePointsOnCircle);
-
-
+createAboutMeButtonsOnCircle(aboutMePointsOnCircle);
 
 const centralButton = document.getElementById("central-circle-button");
 
 let myWorkButtons = document.getElementsByClassName("site-project-button");
 let aboutMeButtons = document.getElementsByClassName("about-me-buttons");
+let aboutMeText = document.getElementById("about-me");
+let myWorkText = document.getElementById("my-work");
 console.log(aboutMeButtons);
 
-for (let i = 0; i < aboutMeButtons.length; i++) {
-    aboutMeButtons[i].style.display = "block";
-}
+jQuery(centralButton).one('click', function() {
+    aboutMeText.textContent = "about me";
+    myWorkText.textContent = "my work";
 
-centralButton.addEventListener("click", () => {
-
-    // for (let i = 0; i < aboutMeButtons.length; i++) {
-    //     aboutMeButtons[i].style.display = "block";
-    // }
-
-
-
-
-    // let aboutMeText = document.createElement("p");
-    // let myWorkText = document.createElement("p");
-
-    // aboutMeText.textContent = "about me";
-    // myWorkText.textContent = "my work";
-
-    // centralButton.appendChild(aboutMeText);
-    // centralButton.appendChild(myWorkText);
-
-
-
-
-
-    centralButton.classList.toggle("central-button-mywork-up");
+    centralButton.appendChild(aboutMeText);
+    centralButton.appendChild(myWorkText);
 
     jQuery(aboutMeButtons).toggle(1000, function() {
         console.log("the about me buttons are gone");
     });
 
-    jQuery(myWorkButtons).toggle(1000, function(){
-        console.log("the project buttons appear");
-    });
+});
 
- 
+let clickCount = 0;
+
+centralButton.addEventListener("click", () => {
+
+    clickCount++;
+
+    if (clickCount > 1) {
+
+        centralButton.classList.toggle("central-button-mywork-up");
+
+        jQuery(aboutMeButtons).toggle(1000, function() {
+            console.log("the about me buttons are gone");
+        });
+    
+        jQuery(myWorkButtons).toggle(1000, function(){
+            console.log("the project buttons appear");
+        });
+    }
 
 });
 
-// jQuery(document).ready( function() {
+jQuery(document).ready( function() {
 
-//     for (let i = 0; i < aboutMeButtons.length; i++) {
-//         aboutMeButtons[i].style.display = "none";
-//     }
+    for (let i = 0; i < aboutMeButtons.length; i++) {
+        aboutMeButtons[i].style.display = "none";
+    }
 
-// });
+});

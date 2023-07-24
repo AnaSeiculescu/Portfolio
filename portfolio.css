@@ -31,6 +31,7 @@ body {
     justify-content: center;
     transition: all 1s;
     background-color: #F7CE3E;
+    cursor: pointer;
 }
 
 .central-button-mywork-up {
@@ -47,6 +48,7 @@ body {
     justify-content: center;
     transition: all 1s;
     background-color: #F7CE3E;
+    cursor: pointer;
 }
 
 #about-me {
@@ -56,16 +58,6 @@ body {
 #my-work {
     transform: rotate(180deg);
 }
-
-/* #central-my-work-button {
-    width: 150px;
-    height: 75px;
-    position: absolute;
-    transform: translate(-50%, 0%) rotate(180deg);
-    border-top-left-radius: 75px;
-    border-top-right-radius: 75px;
-    font-size: 14px;
-} */
 
 .site-project-button {
     position: absolute;
@@ -102,18 +94,6 @@ body {
 }
 
 .about-me-buttons {
-    position: absolute;
-    cursor: pointer;
-    text-align: center;  
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    display: block;
-    background-color: #C5C1C0;
-    /* transition: all 1s; */
-}
-
-.about-me-buttons-off {
     position: absolute;
     cursor: pointer;
     text-align: center;  
