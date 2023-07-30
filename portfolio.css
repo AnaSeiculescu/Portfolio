@@ -10,8 +10,8 @@ body {
     align-items: center;
     justify-content: center;
     height: 100vh;
-    /* background-color: #0A1612; */
-    background-color: #1A2930;
+    background-color: #0A1612;
+    /* background-color: #1A2930; */
     overflow: hidden;
 }
 
