@@ -5,12 +5,24 @@
 }
 
 body {
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
     height: 100vh;
     /* background-color: #0A1612; */
     background-color: #1A2930;
+    overflow: hidden;
+}
+
+.stars {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #C5C1C0;
+    width: 2px;
+    height: 2px;
+    border-radius: 50%;
 }
 
 #center-container {
@@ -31,7 +43,7 @@ body {
     transition: all 1s;
     background-color: #F7CE3E;
     cursor: pointer;
-    box-shadow: inset -25px -25px 40px rgba(0,0,0,.5);
+    box-shadow: inset -25px -25px 40px rgba(0,0,0,.8);
 }
 
 .central-button-mywork-up {
@@ -47,7 +59,7 @@ body {
     transition: all 1s;
     background-color: #F7CE3E;
     cursor: pointer;
-    box-shadow: inset 25px 25px 40px rgba(0,0,0,.7);
+    box-shadow: inset 25px 25px 40px rgba(0,0,0,.8);
 }
 
 #my-work {
@@ -68,10 +80,10 @@ body {
     align-items: center;
     justify-content:space-around;
     background-color: #C5C1C0;
-    box-shadow: inset -25px -25px 40px rgba(0,0,0,.7);
+    box-shadow: inset -25px -25px 40px rgba(0,0,0,.8);
 }
 
-/* .site-project-button-on {
+.site-project-button-on {
     display: flex;
     position: absolute;
     justify-content: space-evenly;
@@ -83,8 +95,8 @@ body {
     height: 200px;
     border-radius: 50%;
     background-color: #C5C1C0;
-    box-shadow: inset -25px -25px 40px rgba(0,0,0,.7);
-} */
+    box-shadow: inset -25px -25px 40px rgba(0,0,0,.8);
+}
 
 .code-project-buttons {
     width: 60px;
@@ -107,5 +119,5 @@ body {
     border-radius: 50%;
     display: none;
     background-color: #C5C1C0;
-    box-shadow: inset -25px -25px 40px rgba(0,0,0,.7);
+    box-shadow: inset -25px -25px 40px rgba(0,0,0,.8);
 }

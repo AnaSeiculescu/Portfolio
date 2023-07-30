@@ -1,10 +1,30 @@
 
+function getStarCoord(min, max) {
+    return (Math.random() * (max - min + 1) + min);
+}
+
+const body = document.querySelector("body");
 const container = document.querySelector("#center-container");
+
+function generateStar() {
+    let star = document.createElement("div");
+    star.classList.add("stars");
+    let x = getStarCoord(0, 100);
+    let y = getStarCoord(0, 100);
+    star.style.transform = `translate(${x}vw, ${y}vh)`;
+    body.insertBefore(star, container);
+    return star;
+}
+
+for (let i = 0; i < 700; i++) {
+    generateStar();
+}
+
 const RADIUS = 250; // adjust to screen size
 
-let project_links = ["https://anaseiculescu.github.io/about-me/", "https://anaseiculescu.github.io/breakfast-recipes/", "https://anaseiculescu.github.io/ana_s_color_picker/", "https://anaseiculescu.github.io/collection-map/", "https://anaseiculescu.github.io/to-do-list/"];
-let project_names = ["about me", "breakfast recipes", "color picker", "collection map", "to do list"];
-let project_code_links = ["https://anaseiculescu.github.io/about-me/", "https://github.com/AnaSeiculescu/breakfast-recipes", "https://github.com/AnaSeiculescu/ana_s_color_picker", "https://github.com/AnaSeiculescu/collection-map", "https://github.com/AnaSeiculescu/to-do-list"];
+let project_links = ["https://anaseiculescu.github.io/collection-map/", "https://anaseiculescu.github.io/ana_s_color_picker/", "https://anaseiculescu.github.io/breakfast-recipes/", "https://anaseiculescu.github.io/to-do-list/", "https://anaseiculescu.github.io/about-me/"];
+let project_names = ["collection map", "color picker", "breakfast recipes", "to do list", "math calculator"];
+let project_code_links = ["https://github.com/AnaSeiculescu/collection-map", "https://github.com/AnaSeiculescu/ana_s_color_picker", "https://github.com/AnaSeiculescu/breakfast-recipes", "https://github.com/AnaSeiculescu/to-do-list", "https://anaseiculescu.github.io/about-me/"];
 
 function getPointOnCircle(angleDegrees) {
     //Convert angle to radians
@@ -34,8 +54,8 @@ function createButtonsOnCircle(pointsOnCircle) {
         const btn = document.createElement("button");
         const btnTextContent = document.createElement("span");
         btnTextContent.innerText = project_names[index];
-        btnTextContent.classList.add("flex-items-site-button");
-        // btn.textContent = project_names[index];
+        // btnTextContent.classList.add("flex-items-site-button");
+        btnTextContent.classList.add("span-text");
         btn.appendChild(btnTextContent);
         btn.style.transform = `translate(${x}px, ${y}px) translate(-50%, -50%)`;
         btn.classList.add("site-project-button");
@@ -54,23 +74,20 @@ function createButtonsOnCircle(pointsOnCircle) {
 
 const pointsOnCircle = getPointsOnCircle(5);
 
-createButtonsOnCircle(pointsOnCircle);
-
 console.log("pointsOnCircle", pointsOnCircle);
-
 
 const centralButton = document.getElementById("central-circle-button");
 
 
 // create a smaller button (linking to the code pages) inside each big circle button
 const bigButtons = createButtonsOnCircle(pointsOnCircle);
-console.log(bigButtons);
+console.log(bigButtons + "astia sunt big buttons");
 
 function createCodeButton(bigButtons) {
 
     const codeButtons = bigButtons.map((button, index) => {
         const codeBtn = document.createElement("button");
-        codeBtn.classList.add("flex-items-site-button");
+        // codeBtn.classList.add("flex-items-site-button");
         codeBtn.textContent = "code";
         codeBtn.classList.add("code-project-buttons");
         // codeBtn.style.transform = "translate(20%, 60%)";
@@ -91,24 +108,53 @@ function createCodeButton(bigButtons) {
 createCodeButton(bigButtons);
 
 let codeButtons = document.getElementsByClassName("code-project-buttons");
+let spanTexts = document.getElementsByClassName("span-text");
 
 function positionChildren() {
 
-    const childPositions = [
+    const codeBtnsPositions = [
         { x: '0%', y: '0%' },
-        { x: '0%', y: '0%' },
-        { x: '0%', y: '0%' },
-        { x: '0%', y: '0%' },
-        { x: '0%', y: '0%' }
+        { x: '-80%', y: '50%' },
+        { x: '-220%', y: '110%' },
+        { x: '10%', y: '-100%' },
+        { x: '-220%', y: '-70%' }
     ];
 
-    for (let i = 0; i <= codeButtons.length; i++) {
+    /* { x: '0%', y: '0%' },
+        { x: '-80%', y: '50%' },
+        { x: '-150%', y: '80%' },
+        { x: '10%', y: '-100%' },
+        { x: '-20%', y: '70%' } */
 
-        childPositions.forEach((position, i) => {
+    for (let i = 0; i < codeButtons.length; i++) {
+
+        console.log("iterez code-buton-urile");
+
+        codeBtnsPositions.forEach((position, i) => {
             codeButtons[i].style.transform = `translate(${position.x}, ${position.y})`;
             console.log("code btns are here");
-        })
+        });
 
+    }
+
+    const spanTextsPositions = [
+        { x: '10%', y: '0%' },
+        { x: '20%', y: '-170%' },
+        { x: '30%', y: '-30%' },
+        { x: '30%', y: '120%' },
+        { x: '50%', y: '-80%' }
+    ];
+
+    /* { x: '10%', y: '0%' },
+        { x: '20%', y: '-140%' },
+        { x: '30%', y: '-30%' },
+        { x: '20%', y: '-140%' },
+        { x: '50%', y: '-80%' } */
+
+    for (let i = 0; i < spanTexts.length; i++) {
+        spanTextsPositions.forEach((position, i) => {
+            spanTexts[i].style.transform = `translate(${position.x}, ${position.y})`;
+        });
     }
 
 }
@@ -116,29 +162,14 @@ function positionChildren() {
 positionChildren();
 
 let myWorkButtons = document.getElementsByClassName("site-project-button");
-
 let aboutMeButtons = document.getElementsByClassName("about-me-buttons");
 let aboutMeText = document.getElementById("about-me");
 let myWorkText = document.getElementById("my-work");
-console.log(aboutMeButtons);
+console.log(`${aboutMeButtons}este about me buttons`);
 
-function changeFlexItemOrder(itemIndex, newOrder) {
-    const flexItems = document.getElementsByClassName("flex-items-site-button");
-    if (itemIndex < 0 || itemIndex >= flexItems.length) {
-      console.error("Invalid item index!");
-      return;
-    }
-    
-    flexItems[itemIndex].style.order = newOrder;
-  }
+let myWorkButtonsArray = Array.from([].slice.call(document.getElementsByClassName("site-project-button")));
+console.log(myWorkButtonsArray);
 
-for (let i = 0; i < bigButtons.length; i++) {
-    let flexItemsInBigBtn = document.getElementsByClassName("flex-items-site-button");
-    console.log(flexItemsInBigBtn);
-    if (i === 2 || i === 4) {
-        changeFlexItemOrder(1, 0);
-    }
-}
 
 // creating other buttons on the big circle, buttons that are available when abou me is up
 
@@ -224,11 +255,3 @@ jQuery(document).ready( function() {
     }
 
 });
-
-
-/*
-
-How to know how many children a "bigButton" has?
-after that, list them in order, what index does they have?
-
-*/
