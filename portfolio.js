@@ -133,8 +133,8 @@ function positionChildren() {
         codeBtnsPositions.forEach((position, i) => {
             codeButtons[i].style.transform = `translate(${position.x}, ${position.y})`;
             if (i == 2) {
-                codeButtons[i].style.borderTop = "1px solid #C5C1C0";
-                codeButtons[i].style.borderLeft = "1px solid #C5C1C0";
+                codeButtons[i].style.borderTop = "2px solid #C5C1C0";
+                codeButtons[i].style.borderLeft = "2px solid #C5C1C0";
             }
             console.log("code btns are here");
         });
