@@ -112,6 +112,7 @@ body {
     cursor: cell;
     /* border: 1px solid #D9D9D9; */
     /* border: 1px solid #C5C1C0; */
+    /* border: 1px solid #a19e9d; */
     font-family: 'Averia Sans Libre', sans-serif;
     font-size: 16px;
 }
@@ -129,5 +130,5 @@ body {
     background-color: #D9D9D9;
     box-shadow: inset -25px -25px 40px rgba(0,0,0,.8);
     font-family: 'Averia Sans Libre', sans-serif;
-    font-size: 16px;
+    font-size: 17px;
 }
