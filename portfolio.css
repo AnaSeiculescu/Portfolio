@@ -5,10 +5,12 @@
 }
 
 body {
+    width: 90%;
+    /* margin: 0 auto; */
     position: relative;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-around;
     height: 100vh;
     background-color: #0A1612;
     /* background-color: #1A2930; */
@@ -25,9 +27,14 @@ body {
     border-radius: 50%;
 }
 
+.openning-text {
+    color: #C5C1C0;
+    position: absolute;
+    font-size: 22px;
+}
+
 #center-container {
     position: relative;
-    display: inline-flex;
 }
 
 .central-button-aboutme-up {

@@ -42,7 +42,7 @@ function getPointsOnCircle(numPoints) {
     const points = [];
 
     for (let i = 0; i < numPoints; i++) {
-        const angleDegrees = i * (360 / numPoints);
+        const angleDegrees = i * (360 / numPoints) + 18;
         const { x, y } = getPointOnCircle(angleDegrees);
         points.push({ x, y });
     }
@@ -50,6 +50,7 @@ function getPointsOnCircle(numPoints) {
 }
 
 function createButtonsOnCircle(pointsOnCircle) {
+
     const buttons = pointsOnCircle.map(({ x, y }, index) => {
         const btn = document.createElement("button");
         const btnTextContent = document.createElement("span");
@@ -114,17 +115,11 @@ function positionChildren() {
 
     const codeBtnsPositions = [
         { x: '0%', y: '0%' },
-        { x: '-80%', y: '50%' },
-        { x: '-220%', y: '110%' },
         { x: '10%', y: '-100%' },
-        { x: '-220%', y: '-70%' }
+        { x: '120%', y: '80%' },
+        { x: '-120%', y: '50%' },
+        { x: '-280%', y: '-70%' }
     ];
-
-    /* { x: '0%', y: '0%' },
-        { x: '-80%', y: '50%' },
-        { x: '-150%', y: '80%' },
-        { x: '10%', y: '-100%' },
-        { x: '-20%', y: '70%' } */
 
     for (let i = 0; i < codeButtons.length; i++) {
 
@@ -139,17 +134,11 @@ function positionChildren() {
 
     const spanTextsPositions = [
         { x: '10%', y: '0%' },
-        { x: '20%', y: '-170%' },
+        { x: '30%', y: '30%' },
         { x: '30%', y: '-30%' },
-        { x: '30%', y: '120%' },
-        { x: '50%', y: '-80%' }
+        { x: '110%', y: '-210%' },
+        { x: '50%', y: '80%' }
     ];
-
-    /* { x: '10%', y: '0%' },
-        { x: '20%', y: '-140%' },
-        { x: '30%', y: '-30%' },
-        { x: '20%', y: '-140%' },
-        { x: '50%', y: '-80%' } */
 
     for (let i = 0; i < spanTexts.length; i++) {
         spanTextsPositions.forEach((position, i) => {
@@ -210,6 +199,20 @@ const aboutMePointsOnCircle = getAbouMePointsOnCircle(3);
 createAboutMeButtonsOnCircle(aboutMePointsOnCircle);
 
 jQuery(centralButton).one('click', function() {
+
+    let openningText = document.getElementsByClassName("openning-text");
+    for (let i = 0; i < openningText.length; i++) {
+        // openningText[i].style.display = "none";
+        jQuery(openningText[i]).toggle(1000, function() {
+            openningText[i].style.display = "none";
+        })
+    }
+
+    // jQuery("body").toggle(1000, function() {
+    //     body.style.display = "flex";
+    //     body.style.width = "100%";
+    // });
+
     aboutMeText.textContent = "about me";
     myWorkText.textContent = "my work";
 
@@ -224,6 +227,12 @@ jQuery(centralButton).one('click', function() {
 
 let clickCount = 0;
 
+const hueValArray = [];
+for (let i = 130; i <= 350; i += 15) {
+    hueValArray.push(i);
+}
+
+
 centralButton.addEventListener("click", () => {
 
     clickCount++;
@@ -237,6 +246,11 @@ centralButton.addEventListener("click", () => {
         });
     
         jQuery(myWorkButtons).toggle(1000, function(){
+            for (let i = 0; i < myWorkButtons.length; i++){
+                let randomColor = Math.floor(Math.random() * hueValArray.length);
+                myWorkButtons[i].style.backgroundColor = `hsl(${hueValArray[randomColor]}, 57%, 75%)`;
+            }
+            
             // myWorkButtons.classList.toggle("site-project-button-on");
             console.log("the project buttons appear");
         });
@@ -254,4 +268,17 @@ jQuery(document).ready( function() {
         myWorkButtons[i].style.display = "none";
     }
 
+    const namePresentationText = document.createElement("p");
+    const scopePresentationText = document.createElement("p");
+
+    namePresentationText.innerText = `hello, I'm Ana Seiculescu`;
+    namePresentationText.classList.add("openning-text");
+    namePresentationText.style.transform = `translate(-250px, 0px)`;
+
+    scopePresentationText.innerText = `I want to start my career in web development`;
+    scopePresentationText.classList.add("openning-text");
+    scopePresentationText.style.transform = `translate(330px, 0px)`;
+    
+    body.insertBefore(namePresentationText, container);
+    body.appendChild(scopePresentationText);
 });
