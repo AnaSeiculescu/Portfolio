@@ -23,8 +23,12 @@ for (let i = 0; i < 700; i++) {
 const RADIUS = 250; // adjust to screen size
 
 let project_links = ["https://anaseiculescu.github.io/collection-map/", "https://anaseiculescu.github.io/ana_s_color_picker/", "https://anaseiculescu.github.io/breakfast-recipes/", "https://anaseiculescu.github.io/to-do-list/", "https://anaseiculescu.github.io/about-me/"];
-let project_names = ["collection map", "color picker", "breakfast recipes", "to do list", "math calculator"];
+let project_names = ["collection map", "color picker", "breakfast recipes", "todo list", "math <br>calculator"];
 let project_code_links = ["https://github.com/AnaSeiculescu/collection-map", "https://github.com/AnaSeiculescu/ana_s_color_picker", "https://github.com/AnaSeiculescu/breakfast-recipes", "https://github.com/AnaSeiculescu/to-do-list", "https://anaseiculescu.github.io/about-me/"];
+let myWorkBtnDimensions = [['210px', '210px'], ['150px', '150px'], ['180px', '180px'], ['120px', '120px'], ['150px', '150px']]; 
+let myWorkBtnColors = [['hsl(120, 40%, 45%)'], ['hsl(358, 65%, 52%)'], ['hsl(235, 74%, 60%)'], ['hsl(29, 98%, 58%)'], ['hsl(180, 100%, 37%)']];
+
+// 122°, 74%, 57%
 
 function getPointOnCircle(angleDegrees) {
     //Convert angle to radians
@@ -54,12 +58,15 @@ function createButtonsOnCircle(pointsOnCircle) {
     const buttons = pointsOnCircle.map(({ x, y }, index) => {
         const btn = document.createElement("button");
         const btnTextContent = document.createElement("span");
-        btnTextContent.innerText = project_names[index];
-        // btnTextContent.classList.add("flex-items-site-button");
+        btnTextContent.innerHTML = project_names[index];
         btnTextContent.classList.add("span-text");
         btn.appendChild(btnTextContent);
         btn.style.transform = `translate(${x}px, ${y}px) translate(-50%, -50%)`;
         btn.classList.add("site-project-button");
+        btn.style.backgroundColor = myWorkBtnColors[index];
+
+        btn.style.width = myWorkBtnDimensions[index][0];
+        btn.style.height = myWorkBtnDimensions[index][1];
 
         container.appendChild(btn);
 
@@ -88,10 +95,8 @@ function createCodeButton(bigButtons) {
 
     const codeButtons = bigButtons.map((button, index) => {
         const codeBtn = document.createElement("button");
-        // codeBtn.classList.add("flex-items-site-button");
         codeBtn.textContent = "code";
         codeBtn.classList.add("code-project-buttons");
-        // codeBtn.style.transform = "translate(20%, 60%)";
 
         button.appendChild(codeBtn);
 
@@ -118,7 +123,7 @@ function positionChildren() {
         { x: '10%', y: '-100%' },
         { x: '120%', y: '80%' },
         { x: '-120%', y: '50%' },
-        { x: '-280%', y: '-70%' }
+        { x: '-140%', y: '-80%' }
     ];
 
     for (let i = 0; i < codeButtons.length; i++) {
@@ -136,8 +141,8 @@ function positionChildren() {
         { x: '10%', y: '0%' },
         { x: '30%', y: '30%' },
         { x: '30%', y: '-30%' },
-        { x: '110%', y: '-210%' },
-        { x: '50%', y: '80%' }
+        { x: '70%', y: '-110%' },
+        { x: '0%', y: '170%' }
     ];
 
     for (let i = 0; i < spanTexts.length; i++) {
@@ -202,7 +207,6 @@ jQuery(centralButton).one('click', function() {
 
     let openningText = document.getElementsByClassName("openning-text");
     for (let i = 0; i < openningText.length; i++) {
-        // openningText[i].style.display = "none";
         jQuery(openningText[i]).toggle(1000, function() {
             openningText[i].style.display = "none";
         })
@@ -227,12 +231,6 @@ jQuery(centralButton).one('click', function() {
 
 let clickCount = 0;
 
-const hueValArray = [];
-for (let i = 130; i <= 350; i += 15) {
-    hueValArray.push(i);
-}
-
-
 centralButton.addEventListener("click", () => {
 
     clickCount++;
@@ -247,11 +245,11 @@ centralButton.addEventListener("click", () => {
     
         jQuery(myWorkButtons).toggle(1000, function(){
             for (let i = 0; i < myWorkButtons.length; i++){
-                let randomColor = Math.floor(Math.random() * hueValArray.length);
-                myWorkButtons[i].style.backgroundColor = `hsl(${hueValArray[randomColor]}, 57%, 75%)`;
+                if ( i == 4 ) {
+                    myWorkButtons[i].style.flexDirection = "column";
+                }
             }
             
-            // myWorkButtons.classList.toggle("site-project-button-on");
             console.log("the project buttons appear");
         });
     }

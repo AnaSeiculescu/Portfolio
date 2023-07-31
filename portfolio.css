@@ -6,14 +6,13 @@
 
 body {
     width: 90%;
-    /* margin: 0 auto; */
+    height: 100vh;
     position: relative;
     display: flex;
     align-items: center;
     justify-content: space-around;
     height: 100vh;
     background-color: #0A1612;
-    /* background-color: #1A2930; */
     overflow: hidden;
 }
 
@@ -29,6 +28,7 @@ body {
 
 .openning-text {
     color: #C5C1C0;
+    /* color: #D9D9D9; */
     position: absolute;
     font-size: 22px;
 }
@@ -38,8 +38,8 @@ body {
 }
 
 .central-button-aboutme-up {
-    width: 150px;
-    height: 150px;
+    width: 180px;
+    height: 180px;
     position: absolute;
     transform: translate(-50%, -50%);
     border-radius: 50%;
@@ -48,14 +48,16 @@ body {
     align-items: center;
     justify-content: center;
     transition: all 1s;
-    background-color: #F7CE3E;
+    /* background-color: #F7CE3E; */
+    /* background-color: #FFCE00; */
+    background-color: #F9CF00;
     cursor: pointer;
     box-shadow: inset -25px -25px 40px rgba(0,0,0,.8);
 }
 
 .central-button-mywork-up {
-    width: 150px;
-    height: 150px;
+    width: 180px;
+    height: 180px;
     position: absolute;
     transform: rotate(180deg) translate(50%, 50%);
     border-radius: 50%;
@@ -64,7 +66,9 @@ body {
     align-items: center;
     justify-content: center;
     transition: all 1s;
-    background-color: #F7CE3E;
+    /* background-color: #F7CE3E; */
+    /* background-color: #FFCE00; */
+    background-color: #F9CF00;
     cursor: pointer;
     box-shadow: inset 25px 25px 40px rgba(0,0,0,.8);
 }
@@ -79,11 +83,8 @@ body {
     text-align: center;
     font-size: 13px;
     letter-spacing: 0.7px;  
-    width: 200px;
-    height: 200px;
     border-radius: 50%;
     display: flex;
-    /* align-content: space-evenly; */
     align-items: center;
     justify-content:space-around;
     background-color: #C5C1C0;
@@ -98,8 +99,6 @@ body {
     text-align: center;
     font-size: 13px;
     letter-spacing: 0.7px;  
-    width: 200px;
-    height: 200px;
     border-radius: 50%;
     background-color: #C5C1C0;
     box-shadow: inset -25px -25px 40px rgba(0,0,0,.8);
@@ -125,6 +124,7 @@ body {
     height: 150px;
     border-radius: 50%;
     display: none;
-    background-color: #C5C1C0;
+    /* background-color: #C5C1C0; */
+    background-color: #D9D9D9;
     box-shadow: inset -25px -25px 40px rgba(0,0,0,.8);
 }
