@@ -27,10 +27,17 @@ body {
 }
 
 .openning-text {
-    color: #C5C1C0;
+    /* color: #C5C1C0; */
     /* color: #D9D9D9; */
+    color: #F19F4D;
+    /* color: #4484CE; */
     position: absolute;
-    font-size: 22px;
+    font-size: 26px;
+    /* font-family: 'Cabin Sketch', sans-serif; */
+    /* font-family: 'Big Shoulders Inline Text', sans-serif; */
+    font-family: 'Alegreya Sans', sans-serif;
+    /* font-weight: 700; */
+    letter-spacing: 1px;
 }
 
 #center-container {
@@ -43,7 +50,6 @@ body {
     position: absolute;
     transform: translate(-50%, -50%);
     border-radius: 50%;
-    font-size: 15px;
     display: grid;
     align-items: center;
     justify-content: center;
@@ -53,6 +59,8 @@ body {
     background-color: #F9CF00;
     cursor: pointer;
     box-shadow: inset -25px -25px 40px rgba(0,0,0,.8);
+    font-family: 'Averia Sans Libre', sans-serif;
+    font-size: 22px;
 }
 
 .central-button-mywork-up {
@@ -61,7 +69,6 @@ body {
     position: absolute;
     transform: rotate(180deg) translate(50%, 50%);
     border-radius: 50%;
-    font-size: 15px;
     display: grid;
     align-items: center;
     justify-content: center;
@@ -71,6 +78,8 @@ body {
     background-color: #F9CF00;
     cursor: pointer;
     box-shadow: inset 25px 25px 40px rgba(0,0,0,.8);
+    font-family: 'Averia Sans Libre', sans-serif;
+    font-size: 22px;
 }
 
 #my-work {
@@ -81,7 +90,6 @@ body {
     position: absolute;
     cursor: pointer;
     text-align: center;
-    font-size: 13px;
     letter-spacing: 0.7px;  
     border-radius: 50%;
     display: flex;
@@ -89,19 +97,9 @@ body {
     justify-content:space-around;
     background-color: #C5C1C0;
     box-shadow: inset -25px -25px 40px rgba(0,0,0,.8);
-}
-
-.site-project-button-on {
-    display: flex;
-    position: absolute;
-    justify-content: space-evenly;
-    cursor: pointer;
-    text-align: center;
-    font-size: 13px;
-    letter-spacing: 0.7px;  
-    border-radius: 50%;
-    background-color: #C5C1C0;
-    box-shadow: inset -25px -25px 40px rgba(0,0,0,.8);
+    font-family: 'Averia Sans Libre', sans-serif;
+    font-size: 17px;
+    color: white;
 }
 
 .code-project-buttons {
@@ -113,14 +111,15 @@ body {
     color: white;
     cursor: cell;
     /* border: 1px solid #D9D9D9; */
-    border: 1px solid #C5C1C0;
+    /* border: 1px solid #C5C1C0; */
+    font-family: 'Averia Sans Libre', sans-serif;
+    font-size: 16px;
 }
 
 .about-me-buttons {
     position: absolute;
     cursor: pointer;
     text-align: center;
-    font-size: 13px;
     letter-spacing: 0.7px;
     width: 150px;
     height: 150px;
@@ -129,4 +128,6 @@ body {
     /* background-color: #C5C1C0; */
     background-color: #D9D9D9;
     box-shadow: inset -25px -25px 40px rgba(0,0,0,.8);
+    font-family: 'Averia Sans Libre', sans-serif;
+    font-size: 16px;
 }

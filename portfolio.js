@@ -23,7 +23,7 @@ for (let i = 0; i < 700; i++) {
 const RADIUS = 250; // adjust to screen size
 
 let project_links = ["https://anaseiculescu.github.io/collection-map/", "https://anaseiculescu.github.io/ana_s_color_picker/", "https://anaseiculescu.github.io/breakfast-recipes/", "https://anaseiculescu.github.io/to-do-list/", "https://anaseiculescu.github.io/about-me/"];
-let project_names = ["collection map", "color picker", "breakfast recipes", "todo list", "math <br>calculator"];
+let project_names = ['collection <br>map', 'color <br>picker', 'breakfast <br>recipes', 'to do <br>list', "math <br>calculator"];
 let project_code_links = ["https://github.com/AnaSeiculescu/collection-map", "https://github.com/AnaSeiculescu/ana_s_color_picker", "https://github.com/AnaSeiculescu/breakfast-recipes", "https://github.com/AnaSeiculescu/to-do-list", "https://anaseiculescu.github.io/about-me/"];
 let myWorkBtnDimensions = [['210px', '210px'], ['150px', '150px'], ['180px', '180px'], ['120px', '120px'], ['150px', '150px']]; 
 let myWorkBtnColors = [['hsl(120, 40%, 45%)'], ['hsl(358, 65%, 52%)'], ['hsl(235, 74%, 60%)'], ['hsl(29, 98%, 58%)'], ['hsl(180, 100%, 37%)']];
@@ -119,10 +119,10 @@ let spanTexts = document.getElementsByClassName("span-text");
 function positionChildren() {
 
     const codeBtnsPositions = [
-        { x: '0%', y: '0%' },
-        { x: '10%', y: '-100%' },
-        { x: '120%', y: '80%' },
-        { x: '-120%', y: '50%' },
+        { x: '70%', y: '-30%' },
+        { x: '120%', y: '-140%' },
+        { x: '220%', y: '30%' },
+        { x: '-75%', y: '25%' },
         { x: '-140%', y: '-80%' }
     ];
 
@@ -132,17 +132,21 @@ function positionChildren() {
 
         codeBtnsPositions.forEach((position, i) => {
             codeButtons[i].style.transform = `translate(${position.x}, ${position.y})`;
+            if (i == 2) {
+                codeButtons[i].style.borderTop = "1px solid #C5C1C0";
+                codeButtons[i].style.borderLeft = "1px solid #C5C1C0";
+            }
             console.log("code btns are here");
         });
 
     }
 
     const spanTextsPositions = [
-        { x: '10%', y: '0%' },
-        { x: '30%', y: '30%' },
-        { x: '30%', y: '-30%' },
-        { x: '70%', y: '-110%' },
-        { x: '0%', y: '170%' }
+        { x: '-30%', y: '80%' },
+        { x: '-30%', y: '90%' },
+        { x: '-0%', y: '80%' },
+        { x: '10%', y: '40%' },
+        { x: '10%', y: '120%' }
     ];
 
     for (let i = 0; i < spanTexts.length; i++) {
@@ -245,9 +249,9 @@ centralButton.addEventListener("click", () => {
     
         jQuery(myWorkButtons).toggle(1000, function(){
             for (let i = 0; i < myWorkButtons.length; i++){
-                if ( i == 4 ) {
+                // if ( i == 4 ) {
                     myWorkButtons[i].style.flexDirection = "column";
-                }
+                // }
             }
             
             console.log("the project buttons appear");
@@ -272,10 +276,11 @@ jQuery(document).ready( function() {
     namePresentationText.innerText = `hello, I'm Ana Seiculescu`;
     namePresentationText.classList.add("openning-text");
     namePresentationText.style.transform = `translate(-250px, 0px)`;
+    // namePresentationText.style.fontSize = "28px";
 
     scopePresentationText.innerText = `I want to start my career in web development`;
     scopePresentationText.classList.add("openning-text");
-    scopePresentationText.style.transform = `translate(330px, 0px)`;
+    scopePresentationText.style.transform = `translate(360px, 0px)`;
     
     body.insertBefore(namePresentationText, container);
     body.appendChild(scopePresentationText);
