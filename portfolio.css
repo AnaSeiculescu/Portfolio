@@ -112,6 +112,8 @@ body {
     text-align: center;
     color: white;
     cursor: cell;
+    /* border: 1px solid #D9D9D9; */
+    border: 1px solid #C5C1C0;
 }
 
 .about-me-buttons {
