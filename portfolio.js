@@ -133,8 +133,8 @@ function positionChildren() {
         codeBtnsPositions.forEach((position, i) => {
             codeButtons[i].style.transform = `translate(${position.x}, ${position.y})`;
             if (i == 2) {
-                codeButtons[i].style.borderTop = "3px solid #a19e9d";
-                codeButtons[i].style.borderLeft = "3px solid #a19e9d";
+                codeButtons[i].style.borderTop = "2px solid #838180";
+                codeButtons[i].style.borderLeft = "2px solid #838180";
             }
             console.log("code btns are here");
         });
@@ -143,7 +143,7 @@ function positionChildren() {
 
     const spanTextsPositions = [
         { x: '-30%', y: '80%' },
-        { x: '-30%', y: '90%' },
+        { x: '-10%', y: '120%' },
         { x: '-0%', y: '80%' },
         { x: '10%', y: '40%' },
         { x: '10%', y: '120%' }
@@ -164,6 +164,8 @@ let aboutMeButtons = document.getElementsByClassName("about-me-buttons");
 let aboutMeText = document.getElementById("about-me");
 let myWorkText = document.getElementById("my-work");
 console.log(`${aboutMeButtons}este about me buttons`);
+const arrowsRotating = document.getElementById("arrows-rotating");
+const underConstructionGif = document.getElementById("gif-under-construction");
 
 let myWorkButtonsArray = Array.from([].slice.call(document.getElementsByClassName("site-project-button")));
 console.log(myWorkButtonsArray);
@@ -209,6 +211,14 @@ createAboutMeButtonsOnCircle(aboutMePointsOnCircle);
 
 jQuery(centralButton).one('click', function() {
 
+    jQuery("#arrows-rotating").toggle(1000, function() {
+        console.log("the arrows are here");
+    });
+
+    jQuery("#gif-under-construction").toggle(1000, function() {
+        console.log("the under construction sign is here");
+    });
+
     let openningText = document.getElementsByClassName("openning-text");
     for (let i = 0; i < openningText.length; i++) {
         jQuery(openningText[i]).toggle(1000, function() {
@@ -223,9 +233,6 @@ jQuery(centralButton).one('click', function() {
 
     aboutMeText.textContent = "about me";
     myWorkText.textContent = "my work";
-
-    centralButton.appendChild(aboutMeText);
-    centralButton.appendChild(myWorkText);
 
     jQuery(aboutMeButtons).toggle(1000, function() {
         console.log("the about me buttons are gone");
@@ -256,6 +263,7 @@ centralButton.addEventListener("click", () => {
             
             console.log("the project buttons appear");
         });
+
     }
 
 });
@@ -270,18 +278,16 @@ jQuery(document).ready( function() {
         myWorkButtons[i].style.display = "none";
     }
 
-    const namePresentationText = document.createElement("p");
-    const scopePresentationText = document.createElement("p");
+    arrowsRotating.style.display = "none";
+    underConstructionGif.style.display = "none";
+
+    const namePresentationText = document.getElementById("name-presentation-text");
+    const scopePresentationText = document.getElementById("scope-presentation-text");
 
     namePresentationText.innerText = `hello, I'm Ana Seiculescu`;
-    namePresentationText.classList.add("openning-text");
     namePresentationText.style.transform = `translate(-250px, 0px)`;
-    // namePresentationText.style.fontSize = "28px";
 
     scopePresentationText.innerText = `I want to start my career in web development`;
-    scopePresentationText.classList.add("openning-text");
     scopePresentationText.style.transform = `translate(360px, 0px)`;
-    
-    body.insertBefore(namePresentationText, container);
-    body.appendChild(scopePresentationText);
+ 
 });

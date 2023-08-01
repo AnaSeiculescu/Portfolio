@@ -7,7 +7,7 @@
 body {
     width: 90%;
     height: 100vh;
-    position: relative;
+    /* position: relative; */
     display: flex;
     align-items: center;
     justify-content: space-around;
@@ -27,21 +27,17 @@ body {
 }
 
 .openning-text {
-    /* color: #C5C1C0; */
-    /* color: #D9D9D9; */
-    color: #F19F4D;
-    /* color: #4484CE; */
+    /* color: #F19F4D; */
+    color: #4484CE;
     position: absolute;
     font-size: 26px;
-    /* font-family: 'Cabin Sketch', sans-serif; */
-    /* font-family: 'Big Shoulders Inline Text', sans-serif; */
     font-family: 'Alegreya Sans', sans-serif;
-    /* font-weight: 700; */
     letter-spacing: 1px;
 }
 
 #center-container {
     position: relative;
+    
 }
 
 .central-button-aboutme-up {
@@ -50,17 +46,21 @@ body {
     position: absolute;
     transform: translate(-50%, -50%);
     border-radius: 50%;
-    display: grid;
+    display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
+    gap: 20px;
     transition: all 1s;
-    /* background-color: #F7CE3E; */
-    /* background-color: #FFCE00; */
     background-color: #F9CF00;
     cursor: pointer;
     box-shadow: inset -25px -25px 40px rgba(0,0,0,.8);
-    font-family: 'Averia Sans Libre', sans-serif;
-    font-size: 22px;
+    font-family: 'Averia Sans Libre', 'Alegreya Sans', sans-serif;
+    font-size: 20px;
+}
+
+i.fa-spin {
+    animation-duration: 25s;
 }
 
 .central-button-mywork-up {
@@ -69,17 +69,17 @@ body {
     position: absolute;
     transform: rotate(180deg) translate(50%, 50%);
     border-radius: 50%;
-    display: grid;
+    display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content:center;
+    gap: 20px;
     transition: all 1s;
-    /* background-color: #F7CE3E; */
-    /* background-color: #FFCE00; */
     background-color: #F9CF00;
     cursor: pointer;
     box-shadow: inset 25px 25px 40px rgba(0,0,0,.8);
-    font-family: 'Averia Sans Libre', sans-serif;
-    font-size: 22px;
+    font-family: 'Averia Sans Libre', 'Alegreya Sans', sans-serif;
+    font-size: 20px;
 }
 
 #my-work {
@@ -97,7 +97,7 @@ body {
     justify-content:space-around;
     background-color: #C5C1C0;
     box-shadow: inset -25px -25px 40px rgba(0,0,0,.8);
-    font-family: 'Averia Sans Libre', sans-serif;
+    font-family: 'Averia Sans Libre', 'Alegreya Sans', sans-serif;
     font-size: 17px;
     color: white;
 }
@@ -110,11 +110,9 @@ body {
     text-align: center;
     color: white;
     cursor: cell;
-    /* border: 1px solid #D9D9D9; */
-    /* border: 1px solid #C5C1C0; */
-    /* border: 1px solid #a19e9d; */
-    font-family: 'Averia Sans Libre', sans-serif;
+    font-family: 'Averia Sans Libre', 'Alegreya Sans', sans-serif;
     font-size: 16px;
+    letter-spacing: 1px;
 }
 
 .about-me-buttons {
@@ -126,9 +124,14 @@ body {
     height: 150px;
     border-radius: 50%;
     display: none;
-    /* background-color: #C5C1C0; */
     background-color: #D9D9D9;
     box-shadow: inset -25px -25px 40px rgba(0,0,0,.8);
-    font-family: 'Averia Sans Libre', sans-serif;
-    font-size: 17px;
+    font-family: 'Averia Sans Libre', 'Alegreya Sans', sans-serif;
+    font-size: 18px;
+}
+
+#gif-under-construction {
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
 }
