@@ -5,7 +5,7 @@
 }
 
 body {
-    width: 90%;
+    width: 85%;
     height: 100vh;
     /* position: relative; */
     display: flex;
@@ -28,16 +28,62 @@ body {
 
 .openning-text {
     /* color: #F19F4D; */
-    color: #4484CE;
+    color: #2688f8;
     position: absolute;
     font-size: 26px;
     font-family: 'Alegreya Sans', sans-serif;
-    letter-spacing: 1px;
+    letter-spacing: 1.15px;
+    /* text-align: center; */
+    text-shadow: 2px 2px 3px #256bbb;
+}
+
+#name-presentation-text {
+    width: 15%;
+    transform: translate(-260px, 0px);
+}
+
+#scope-presentation-text {
+    width: 28%;
+    padding-right: 15px;
+    transform: translate(370px, 0px);
+    text-align: right;
+}
+
+#something-personal {
+    display: block;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #ffa852;
+    display: none;
+}
+
+#career-short-telling {
+    margin-top: 10px;
+    display: block;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #ffa852;
+    display: none;
+}
+
+#contact-me {
+    padding-top: 8px;
+    height: 45px;
+    display: none;
+}
+
+#contact-me2 {
+    /* width: 105px;
+    height: 28px; */
+    position: absolute;
+    transform: translate(-38vw, 0);
+    display: none;
+    color: #fd902b;
+    /* box-shadow: 3px 3px 1px #c7762b; */
 }
 
 #center-container {
     position: relative;
-    
 }
 
 .central-button-aboutme-up {
@@ -61,6 +107,7 @@ body {
 
 i.fa-spin {
     animation-duration: 25s;
+    /* transition: 2s; */
 }
 
 .central-button-mywork-up {
@@ -120,11 +167,13 @@ i.fa-spin {
     cursor: pointer;
     text-align: center;
     letter-spacing: 0.7px;
-    width: 150px;
-    height: 150px;
+    width: 130px;
+    height: 130px;
     border-radius: 50%;
     display: none;
-    background-color: #D9D9D9;
+    /* background-color: #D9D9D9; */
+    background-color: #256bbb;
+    color: white;
     box-shadow: inset -25px -25px 40px rgba(0,0,0,.8);
     font-family: 'Averia Sans Libre', 'Alegreya Sans', sans-serif;
     font-size: 18px;

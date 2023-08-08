@@ -26,7 +26,9 @@ let project_links = ["https://anaseiculescu.github.io/collection-map/", "https:/
 let project_names = ['collection <br>map', 'color <br>picker', 'breakfast <br>recipes', 'to do <br>list', "math <br>calculator"];
 let project_code_links = ["https://github.com/AnaSeiculescu/collection-map", "https://github.com/AnaSeiculescu/ana_s_color_picker", "https://github.com/AnaSeiculescu/breakfast-recipes", "https://github.com/AnaSeiculescu/to-do-list", "https://anaseiculescu.github.io/about-me/"];
 let myWorkBtnDimensions = [['210px', '210px'], ['150px', '150px'], ['180px', '180px'], ['120px', '120px'], ['150px', '150px']]; 
-let myWorkBtnColors = [['hsl(120, 40%, 45%)'], ['hsl(358, 65%, 52%)'], ['hsl(235, 74%, 60%)'], ['hsl(29, 98%, 58%)'], ['hsl(180, 100%, 37%)']];
+let myWorkBtnColors = [['hsl(120, 40%, 45%)'], ['hsl(358, 78%, 55%)'], ['hsl(235, 74%, 60%)'], ['hsl(29, 98%, 58%)'], ['hsl(180, 100%, 37%)']];
+let about_me_links = ["resume-cv-02.pdf", "story.pdf"];
+let about_me_links_pageName = ['Resume', 'Story']
 
 // 122°, 74%, 57%
 
@@ -173,7 +175,7 @@ console.log(myWorkButtonsArray);
 
 // creating other buttons on the big circle, buttons that are available when abou me is up
 
-let about_me_links = ["CV", "education", "skills"];
+let about_me_btnsText = ["CV", "story", "skills"];
 
 function getAbouMePointsOnCircle(numPoints) {
     const points = [];
@@ -189,15 +191,25 @@ function getAbouMePointsOnCircle(numPoints) {
 function createAboutMeButtonsOnCircle(pointsOnCircle) {
     const buttons = pointsOnCircle.map(({ x, y }, index) => {
         const btn = document.createElement("button");
-        btn.textContent = about_me_links[index];
+        btn.textContent = about_me_btnsText[index];
         btn.style.transform = `translate(${x}px, ${y}px) translate(-50%, -50%)`;
         btn.classList.add("about-me-buttons");
 
         container.appendChild(btn);
 
-        // btn.addEventListener("click", function() {
-        //     window.open(project_links[index]);
-        // });
+        if (index < pointsOnCircle.length-1) {
+            btn.addEventListener("click", function() {
+                let wind = window.open(about_me_links[index], '_blank');
+                setTimeout( function() {
+                    wind.document.title = about_me_links_pageName[index];
+                }, 10);
+                // wind.document.title = about_me_links_pageName[index];
+                // wind.document.write(`<html><head><title>${about_me_links_pageName[index]}</title></head></html>`);
+                // wind.document.close();
+                return false;
+            });
+        }
+        
 
         return btn;
     });
@@ -238,6 +250,10 @@ jQuery(centralButton).one('click', function() {
         console.log("the about me buttons are gone");
     });
 
+    jQuery("#contact-me2").toggle(1000, function() {
+        jQuery("#contact-me2").css('display', 'block');
+    })
+
 });
 
 let clickCount = 0;
@@ -254,7 +270,7 @@ centralButton.addEventListener("click", () => {
             console.log("the about me buttons are gone");
         });
     
-        jQuery(myWorkButtons).toggle(1000, function(){
+        jQuery(myWorkButtons).toggle(1000, function() {
             for (let i = 0; i < myWorkButtons.length; i++){
                 // if ( i == 4 ) {
                     myWorkButtons[i].style.flexDirection = "column";
@@ -270,6 +286,10 @@ centralButton.addEventListener("click", () => {
 
 jQuery(document).ready( function() {
 
+    const somethingPersonal = document.getElementById("something-personal");
+    const careerShortTelling = document.getElementById("career-short-telling");
+    const contactMe = document.getElementById("contact-me");
+
     for (let i = 0; i < aboutMeButtons.length; i++) {
         aboutMeButtons[i].style.display = "none";
     }
@@ -281,13 +301,12 @@ jQuery(document).ready( function() {
     arrowsRotating.style.display = "none";
     underConstructionGif.style.display = "none";
 
-    const namePresentationText = document.getElementById("name-presentation-text");
-    const scopePresentationText = document.getElementById("scope-presentation-text");
-
-    namePresentationText.innerText = `hello, I'm Ana Seiculescu`;
-    namePresentationText.style.transform = `translate(-250px, 0px)`;
-
-    scopePresentationText.innerText = `I want to start my career in web development`;
-    scopePresentationText.style.transform = `translate(360px, 0px)`;
+    setTimeout(function() {
+        jQuery('#something-personal, #career-short-telling, #contact-me').toggle(1000, function() {
+            somethingPersonal.style.display = "block";
+            careerShortTelling.style.display = "block";
+            contactMe.style.display = "block";
+        })
+    }, 2500);
  
 });
