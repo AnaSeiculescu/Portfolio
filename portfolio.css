@@ -7,6 +7,7 @@
 body {
     width: 85%;
     height: 100vh;
+    /* width: 100vw; */
     /* position: relative; */
     display: flex;
     align-items: center;
@@ -33,19 +34,18 @@ body {
     font-size: 26px;
     font-family: 'Alegreya Sans', sans-serif;
     letter-spacing: 1.15px;
-    /* text-align: center; */
     text-shadow: 2px 2px 3px #256bbb;
 }
 
 #name-presentation-text {
-    width: 15%;
-    transform: translate(-260px, 0px);
+    /* width: 25%; */
+    transform: translate(-240px, 0px);
 }
 
 #scope-presentation-text {
-    width: 28%;
+    /* width: 45%; */
     padding-right: 15px;
-    transform: translate(370px, 0px);
+    transform: translate(360px, 0px);
     text-align: right;
 }
 
@@ -79,11 +79,11 @@ body {
     transform: translate(-38vw, 0);
     display: none;
     color: #fd902b;
-    /* box-shadow: 3px 3px 1px #c7762b; */
 }
 
 #center-container {
     position: relative;
+    display: flex;
 }
 
 .central-button-aboutme-up {
@@ -107,7 +107,6 @@ body {
 
 i.fa-spin {
     animation-duration: 25s;
-    /* transition: 2s; */
 }
 
 .central-button-mywork-up {
@@ -183,4 +182,33 @@ i.fa-spin {
     position: absolute;
     bottom: 0px;
     right: 0px;
+}
+
+#description-text-when-click-or-hover {
+    /* text-align: center; */
+    position: absolute;
+    /* top: 50vw; */
+    /* right: 5vw; */
+    width: 20vw;
+    color: white;
+    transform: translate(35vw, -23px);
+    color:#F9CF00;
+    display: none;
+}
+
+.language-icon {
+    margin-right: 15px;
+}
+
+#skills-description {
+    position: absolute;
+    top: 20px;
+    right: 20px; 
+    color: white;
+    color:#F9CF00;
+    display: none;
+}
+
+#skills-description > span > img {
+    margin-right: 10px;
 }

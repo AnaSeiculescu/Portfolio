@@ -169,6 +169,8 @@ console.log(`${aboutMeButtons}este about me buttons`);
 const arrowsRotating = document.getElementById("arrows-rotating");
 const underConstructionGif = document.getElementById("gif-under-construction");
 
+let counter = 0;
+
 let myWorkButtonsArray = Array.from([].slice.call(document.getElementsByClassName("site-project-button")));
 console.log(myWorkButtonsArray);
 
@@ -197,6 +199,9 @@ function createAboutMeButtonsOnCircle(pointsOnCircle) {
 
         container.appendChild(btn);
 
+        // let descriptionTextWhenClickOrHover = document.getElementById("description-text-when-click-or-hover");
+        // let skillsDescription = document.getElementById("skills-description");
+
         if (index < pointsOnCircle.length-1) {
             btn.addEventListener("click", function() {
                 let wind = window.open(about_me_links[index], '_blank');
@@ -206,6 +211,14 @@ function createAboutMeButtonsOnCircle(pointsOnCircle) {
                 // wind.document.title = about_me_links_pageName[index];
                 // wind.document.write(`<html><head><title>${about_me_links_pageName[index]}</title></head></html>`);
                 // wind.document.close();
+                return false;
+            });
+        } else if (index == pointsOnCircle.length-1) {
+            btn.addEventListener("click", function() {
+                jQuery("#skills-description").toggle(500, function() {
+                    counter++;
+                });
+                
                 return false;
             });
         }
@@ -258,7 +271,7 @@ jQuery(centralButton).one('click', function() {
 
 let clickCount = 0;
 
-centralButton.addEventListener("click", () => {
+centralButton.addEventListener("click", (event) => {
 
     clickCount++;
 
@@ -272,14 +285,21 @@ centralButton.addEventListener("click", () => {
     
         jQuery(myWorkButtons).toggle(1000, function() {
             for (let i = 0; i < myWorkButtons.length; i++){
-                // if ( i == 4 ) {
-                    myWorkButtons[i].style.flexDirection = "column";
-                // }
+                myWorkButtons[i].style.flexDirection = "column";
             }
-            
             console.log("the project buttons appear");
+            
         });
 
+    }
+
+    if (clickCount % 2 == 0) {
+        let skillsDescription = document.getElementById("skills-description");
+        if (counter % 2 == 1) {
+            jQuery("#skills-description").toggle(500, function() { 
+                counter++;
+            });
+        }
     }
 
 });
