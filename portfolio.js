@@ -20,7 +20,7 @@ for (let i = 0; i < 1000; i++) {
     generateStar();
 }
 
-const RADIUS = 250; // adjust to screen size
+let RADIUS = 250; // adjust to screen size
 
 let project_links = ["https://anaseiculescu.github.io/collection-map/", "https://anaseiculescu.github.io/ana_s_color_picker/", "https://anaseiculescu.github.io/breakfast-recipes/", "https://anaseiculescu.github.io/to-do-list/", "https://anaseiculescu.github.io/about-me/"];
 let project_names = ['collection <br>map', 'color <br>picker', 'breakfast <br>recipes', 'to do <br>list', "math <br>calculator"];
@@ -28,7 +28,12 @@ let project_code_links = ["https://github.com/AnaSeiculescu/collection-map", "ht
 let myWorkBtnDimensions = [['210px', '210px'], ['150px', '150px'], ['180px', '180px'], ['120px', '120px'], ['150px', '150px']]; 
 let myWorkBtnColors = [['hsl(120, 40%, 45%)'], ['hsl(358, 78%, 55%)'], ['hsl(235, 74%, 60%)'], ['hsl(29, 98%, 58%)'], ['hsl(180, 100%, 37%)']];
 let about_me_links = ["resume-cv-02.pdf", "story.pdf"];
-let about_me_links_pageName = ['Resume', 'Story']
+let about_me_links_pageName = ['Resume', 'Story'];
+
+if (jQuery(window).width() < 1050) {
+    RADIUS = 300;
+    myWorkBtnDimensions = [['240px', '240px'], ['180px', '180px'], ['210px', '210px'], ['150px', '150px'], ['180px', '180px']];
+}
 
 // 122°, 74%, 57%
 
@@ -238,6 +243,7 @@ createAboutMeButtonsOnCircle(aboutMePointsOnCircle);
 jQuery(centralButton).one('click', function() {
 
     container.classList.add('after-first-click');
+    centralButton.classList.remove("a-little-bit-left");
 
     jQuery("#arrows-rotating").toggle(1000, function() {
         console.log("the arrows are here");

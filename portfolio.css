@@ -5,11 +5,12 @@
 }
 
 html {
-    max-width: 100%;
+    /* max-width: 100%;
     max-height: 100%;
     margin-right: 3%;
-    /* margin-left: 3%; */
-    position: relative;
+    margin-left: 3%; */
+    /* position: relative; */
+    /* overflow: scroll; */
 }
 
 body {
@@ -114,7 +115,7 @@ body {
 }
 
 i.fa-spin {
-    animation-duration: 25s;
+    animation-duration: 20s;
 }
 
 .central-button-mywork-up {
@@ -223,7 +224,7 @@ i.fa-spin {
     display: none;
     color: #F9CF00;
     position: absolute;
-    top: 5%;
+    bottom: 5%;
     left: 5%;
     font-family: 'Averia Sans Libre', 'Alegreya Sans', sans-serif;
     font-size: 28px;
@@ -275,12 +276,72 @@ i.fa-spin {
 
 @media (max-width: 1050px) {
 
+    body {
+        width: 100%;
+    }
+
     #advice-see-on-desktop {
         display: block;
     }
 
     #center-container.after-first-click {
         transform: translate(0, 0);
+    }
+
+    #the-container-of-the-center-container {
+        max-width: 100vw;
+        max-height: 100vh;
+    }
+
+    #central-circle-button.a-little-bit-left {
+        transform: translate(-65%, -50%);
+    }
+
+    .central-button-aboutme-up {
+        width: 200px;
+        height: 200px;
+        font-size: 22px;
+    }
+
+    .central-button-mywork-up {
+        width: 200px;
+        height: 200px;
+        font-size: 22px;
+    }
+
+    .about-me-buttons {
+        width: 170px;
+        height: 170px;
+        font-size: 20px;
+    }
+
+    .code-project-buttons {
+        width: 80px;
+        height: 80px;
+        font-size: 18px;
+    }
+
+    .site-project-button {
+        font-size: 19px;
+    }
+
+    #contact-me2 {
+        position: absolute;
+        transform: translate(-16vw, -23vh);
+        display: none;
+        color: #fd902b;
+        scale: 2;
+    }
+
+    #name-presentation-text {
+        transform: translate(-280px, 0px);
+    }
+    
+    #scope-presentation-text {
+        padding-right: 15px;
+        transform: translate(350px, 0px);
+        text-align: right;
+        padding-right: 30px;
     }
 
 }
