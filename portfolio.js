@@ -4,6 +4,7 @@ function getStarCoord(min, max) {
 }
 
 const body = document.querySelector("body");
+const containerOfTheCenterContainer = document.getElementById("the-container-of-the-central-container");
 const container = document.querySelector("#center-container");
 
 function generateStar() {
@@ -12,7 +13,7 @@ function generateStar() {
     let x = getStarCoord(0, 100);
     let y = getStarCoord(0, 100);
     star.style.transform = `translate(${x}vw, ${y}vh)`;
-    body.insertBefore(star, container);
+    containerOfTheCenterContainer.insertBefore(star, container);
     return star;
 }
 
@@ -32,7 +33,7 @@ let about_me_links_pageName = ['Resume', 'Story'];
 
 if (jQuery(window).width() < 1050) {
     RADIUS = 300;
-    myWorkBtnDimensions = [['240px', '240px'], ['180px', '180px'], ['210px', '210px'], ['150px', '150px'], ['180px', '180px']];
+    myWorkBtnDimensions = [['260px', '260px'], ['200px', '200px'], ['230px', '230px'], ['170px', '170px'], ['200px', '200px']];
 }
 
 // 122°, 74%, 57%
@@ -143,10 +144,17 @@ function positionChildren() {
 
         codeBtnsPositions.forEach((position, i) => {
             codeButtons[i].style.transform = `translate(${position.x}, ${position.y})`;
-            if (i == 2) {
-                codeButtons[i].style.borderTop = "2px solid #838180";
-                codeButtons[i].style.borderLeft = "2px solid #838180";
-            }
+            // if (i == 2) {
+            //     // codeButtons[i].style.borderTop = "2px solid #838180";
+            //     // codeButtons[i].style.borderLeft = "2px solid #838180";
+
+            //     codeButtons[i].style.borderTop = "2px solid hsl(235, 74%, 60%)";
+            //     codeButtons[i].style.borderLeft = "2px solid hsl(235, 74%, 60%)";
+            // }
+
+            codeButtons[i].style.borderTop = `3px solid ${myWorkBtnColors[i]}`;
+            codeButtons[i].style.borderLeft = `3px solid ${myWorkBtnColors[i]}`;
+
             console.log("code btns are here");
         });
 

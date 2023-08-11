@@ -17,6 +17,10 @@ body {
     /* margin-right: 5%; */
 }
 
+a {
+    text-decoration: none;
+}
+
 .stars {
     position: absolute;
     top: 0;
@@ -200,7 +204,7 @@ i.fa-spin {
     position: absolute;
     width: 25vw;
     color: #C5C1C0;
-    transform: translate(25vw, -38vh);
+    transform: translate(38vw, -15vh);
     font-family: 'Averia Sans Libre', 'Alegreya Sans', sans-serif;
     font-size: 17px;
     display: flex;
@@ -227,9 +231,13 @@ i.fa-spin {
         transform: translate(-35vw, 0);
     }
 
+    #description-text-when-hover {
+        transform: translate(38vw, -10vh);
+    }
+
 }
 
-@media only screen and (min-width: 1150px) and (max-width: 1450px) {
+@media only screen and (min-width: 1050px) and (max-width: 1450px) {
 
     #center-container.after-first-click {
         transform: translate(-6vw, 0);
@@ -241,13 +249,13 @@ i.fa-spin {
 
     #description-text-when-hover {
         width: 24vw;
-        transform: translate(33vw, -48vh);
+        transform: translate(40vw, -3vh);
         font-size: 16px;
     }
 
 }
 
-@media only screen and (min-width: 950px) and (max-width: 1150px) {
+@media only screen and (min-width: 950px) and (max-width: 1050px) {
 
     #center-container.after-first-click {
         transform: translate(-7vw, 0);
@@ -265,7 +273,7 @@ i.fa-spin {
 
 }
 
-@media (max-width: 1050px) {
+@media only screen and (max-width: 1050px) {
 
     body {
         width: 100%;
@@ -284,36 +292,30 @@ i.fa-spin {
         max-height: 100vh;
     }
 
+    #central-circle-button {
+        width: 230px;
+        height: 230px;
+        font-size: 30px;
+    }
+
     #central-circle-button.a-little-bit-left {
-        transform: translate(-65%, -50%);
-    }
-
-    .central-button-aboutme-up {
-        width: 200px;
-        height: 200px;
-        font-size: 22px;
-    }
-
-    .central-button-mywork-up {
-        width: 200px;
-        height: 200px;
-        font-size: 22px;
+        transform: translate(-50%, -50%);
     }
 
     .about-me-buttons {
-        width: 170px;
-        height: 170px;
-        font-size: 20px;
+        width: 200px;
+        height: 200px;
+        font-size: 24px;
     }
 
     .code-project-buttons {
         width: 80px;
         height: 80px;
-        font-size: 18px;
+        font-size: 21px;
     }
 
     .site-project-button {
-        font-size: 19px;
+        font-size: 24px;
     }
 
     #contact-me2 {
@@ -324,15 +326,38 @@ i.fa-spin {
         scale: 2;
     }
 
+    .openning-text {
+        font-size: 36px;
+    }
+
     #name-presentation-text {
-        transform: translate(-280px, 0px);
+        transform: translate(0vw, -40vh);
+        text-align: center;
+    }
+
+    #scope-text {
+        display: none;
     }
     
     #scope-presentation-text {
         padding-right: 15px;
-        transform: translate(350px, 0px);
-        text-align: right;
+        transform: translate(0vw, -28vh);
+        text-align: center;
         padding-right: 30px;
+        /* width: 20%; */
+    }
+
+    #something-personal {
+        font-size: 25px;
+    }
+    
+    #career-short-telling {
+        font-size: 25px;
+    }
+
+    #contact-me {
+        scale: 2;
+        margin: 35px;
     }
 
 }

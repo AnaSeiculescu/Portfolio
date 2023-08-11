@@ -4,7 +4,7 @@
     <head>
         <title>Portfolio by Ana Seiculescu</title>
         <link rel="stylesheet" href="portfolio.css">
-        <meta name="viewport" content="width=device-width, initial-scale=0.43"/>
+        <meta name="viewport" content="width=device-width, initial-scale=0.5, minimum-scale=0.4, maximum-scale=2, height=device-height"/>
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Alegreya+Sans:wght@500&family=Averia+Sans+Libre&family=Big+Shoulders+Inline+Text&family=Cabin+Sketch:wght@400;700&display=swap" rel="stylesheet">
@@ -16,9 +16,15 @@
     <body>
 
         <div id="contact-me2">
-            <i class="fa-solid fa-envelope fa-xl" style="color: #F9CF00;"></i>
-            <i class="fa-brands fa-github fa-xl" style="color: #F9CF00; margin-left: 10px;"></i>
-            <i class="fa-brands fa-linkedin fa-xl" style="color: #F9CF00; margin-left: 10px;"></i>
+            <a href="mailto:anaseiculescu@yahoo.com?Subject=Hello%20again" target="-top">
+                <i class="fa-solid fa-envelope fa-xl" style="color: #F9CF00;"></i>
+            </a>
+            <a href="https://github.com/AnaSeiculescu" target="_blank">
+                <i class="fa-brands fa-github fa-xl" style="color: #F9CF00; margin-left: 10px;"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/ana-seiculescu/" target="_blank">
+                <i class="fa-brands fa-linkedin fa-xl" style="color: #F9CF00; margin-left: 10px;"></i>
+            </a>
         </div>
 
         <div id="name-presentation-text" class="openning-text">
@@ -30,59 +36,67 @@
             </div>
             <span id="something-personal">and I belive in signs, intuition, love, <br>communication, friendship, team...</span>
         </div>
-        <div id="center-container">
+        <div id="the-container-of-the-central-container">
 
-            <button id="central-circle-button" class="a-little-bit-left central-button-aboutme-up">
-                <p id="about-me"></p>
-                <i id="arrows-rotating" class="fa-solid fa-arrows-rotate fa-spin fa-lg" style="color: #af9b08;"></i>
-                <p id="my-work"></p>
-            </button>
+            <div id="center-container">
 
-            <div id="description-text-when-hover">
-                <span id="project-description-0" class="project-description">
-                    My most "struggled" project, but after the present portfolio :). <br>
-                    This project was inspired by the final homework of the JavaScript course with Prof. Lucian Cornianu on the BitAcademy platform.<br>
-                    My choice was to create an interactive map that would keep inside its borders all the searched locations.<br>
-                    It's a project that caught all my attention and energy. I enjoyed working on it, and I struggled a lot.
-                    One of the struggles was working with Google Maps API, which I learned about during the course, but it is different
-                    when using it unattended. Also, the dynamics of the divs that would reduce or increase as needed gave me a lot of trouble.
-                    The transition property and the responsive design had a play in my trouble.<br><br>
-                    Instructions:<br>
-                    The main idea is to be able to search for a location at any time, so the first map is for searching. Also, to see on
-                    the map all the locations you want to collect, a second map is needed.<br>
-                    You will see on the top left an empty "my collection" list. You cannot collect until you have searched. You collect when you "add to collection". 
-                    When added to the collection map, the location is added to the "my collection" list also. 
-                </span>
-                <span id="project-description-1" class="project-description">
-                    What are friends for?<br>
-                    I have at least one answer: they help you when in need.<br>
-                    So, my friend talked me into the idea of creating a color picker, for the sake of the exercise. I wouldn't see myself being able to do it,
-                    but he made a plan of issues, and things changed.<br>
-                    In the process of working on this project, I learned how to use CSS Grid and how to work with the issues on GitHub.
-                </span>
-                <span id="project-description-2" class="project-description">
-                    An inspiration from a day-to-day routine...<br>
-                    My way to apply the learning from the HTML/CSS remote course, and the first result of my responsive design knowledge.<br>
-                    The fact that I created a logo that I'm proud of inspired me to succeed in making this website responsive and have the logo that
-                    goes responsive too.
-                </span>
-                <span id="project-description-3" class="project-description">
-                    This project was my first contact with incorporating JavaScript on an HTML page.<br>
-                    It was like jumping in with both feet. Meeting with the MDN documentation and other oases...a little scary. But it was lots of fun,
-                    and also frustrating :).<br>
-                    ...but the satisfaction on the after...
-                </span>
-                <span id="project-description-4" class="project-description">
-                    
-                </span>
+                <button id="central-circle-button" class="a-little-bit-left central-button-aboutme-up">
+                    <p id="about-me"></p>
+                    <i id="arrows-rotating" class="fa-solid fa-arrows-rotate fa-spin fa-lg" style="color: #af9b08;"></i>
+                    <p id="my-work"></p>
+                </button>
+    
             </div>
 
         </div>
         
+        
         <div id="scope-presentation-text" class="openning-text">
-            I want to start my career in web development
+            <span id="scope-text">
+                I want to start my career in web development
+            </span>
+            
             <span id="career-short-telling">I'm only at the beginning of my journey to learn about this world.<br> 
                 It feels like it's a huge, challenging and, most importantly, <br>beautiful universe here to discover and learn about.</span>
+        </div>
+
+        <div id="description-text-when-hover">
+            <span id="project-description-0" class="project-description">
+                My most "struggled" project, but after the present portfolio :). <br>
+                This project was inspired by the final homework of the JavaScript course with Prof. Lucian Cornianu on the BitAcademy platform.<br>
+                My choice was to create an interactive map that would keep inside its borders all the searched locations.<br>
+                It's a project that caught all my attention and energy. I enjoyed working on it, and I struggled a lot.
+                One of the struggles was working with Google Maps API, which I learned about during the course, but it is different
+                when using it unattended. Also, the dynamics of the divs that would reduce or increase as needed gave me a lot of trouble.
+                The transition property and the responsive design had a play in my trouble.<br><br>
+                Instructions:<br>
+                The main idea is to be able to search for a location at any time, so the first map is for searching. Also, to see on
+                the map all the locations you want to collect, a second map is needed.<br>
+                You will see on the top left an empty "my collection" list. You cannot collect until you have searched. You collect when you "add to collection". 
+                When added to the collection map, the location is added to the "my collection" list also. 
+            </span>
+            <span id="project-description-1" class="project-description">
+                What are friends for?<br>
+                I have at least one answer: they help you when in need.<br>
+                So, my friend talked me into the idea of creating a color picker, for the sake of the exercise. I wouldn't see myself being able to do it,
+                but he made a plan of issues, and things changed.<br>
+                In the process of working on this project, I learned how to use CSS Grid and how to work with the issues on GitHub.
+            </span>
+            <span id="project-description-2" class="project-description">
+                An inspiration from a day-to-day routine...<br>
+                My way to apply the learning from the HTML/CSS remote course, and the first result of my responsive design knowledge.<br>
+                The fact that I created a logo that I'm proud of inspired me to succeed in making this website responsive and have the logo that
+                goes responsive too.
+            </span>
+            <span id="project-description-3" class="project-description">
+                This project was my first contact with incorporating JavaScript on an HTML page.<br>
+                It was like jumping in with both feet. Meeting with the MDN documentation and other oases...a little scary. But it was lots of fun,
+                and also frustrating :).<br>
+                ...but the satisfaction on the after...
+            </span>
+            <span id="project-description-4" class="project-description">
+                
+            </span>
         </div>
 
         <div id="skills-description">
