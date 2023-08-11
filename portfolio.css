@@ -279,4 +279,8 @@ i.fa-spin {
         display: block;
     }
 
+    #center-container.after-first-click {
+        transform: translate(0, 0);
+    }
+
 }
