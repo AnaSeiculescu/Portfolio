@@ -107,7 +107,7 @@ function createCodeButton(bigButtons) {
         button.appendChild(codeBtn);
 
         codeBtn.addEventListener("click", function(event) {
-            // event.stopPropagation();
+            event.stopPropagation();
             window.open(project_code_links[index]);
         });
 
@@ -236,6 +236,8 @@ const aboutMePointsOnCircle = getAbouMePointsOnCircle(3);
 createAboutMeButtonsOnCircle(aboutMePointsOnCircle);
 
 jQuery(centralButton).one('click', function() {
+
+    container.classList.add('after-first-click');
 
     jQuery("#arrows-rotating").toggle(1000, function() {
         console.log("the arrows are here");
