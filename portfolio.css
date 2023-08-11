@@ -222,7 +222,7 @@ i.fa-spin {
     bottom: 5%;
     left: 5%;
     font-family: 'Averia Sans Libre', 'Alegreya Sans', sans-serif;
-    font-size: 28px;
+    font-size: 32px;
 }
 
 @media only screen and (min-width: 1450px) and (max-width: 1750px) {
@@ -327,11 +327,11 @@ i.fa-spin {
     }
 
     .openning-text {
-        font-size: 36px;
+        font-size: 48px;
     }
 
     #name-presentation-text {
-        transform: translate(0vw, -40vh);
+        transform: translate(0vw, -39vh);
         text-align: center;
     }
 
@@ -348,16 +348,17 @@ i.fa-spin {
     }
 
     #something-personal {
-        font-size: 25px;
+        font-size: 32px;
+        padding-top: 25px;
     }
     
     #career-short-telling {
-        font-size: 25px;
+        font-size: 32px;
     }
 
     #contact-me {
-        scale: 2;
-        margin: 35px;
+        scale: 1.6;
+        margin: 20px;
     }
 
 }
