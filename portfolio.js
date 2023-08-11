@@ -16,7 +16,7 @@ function generateStar() {
     return star;
 }
 
-for (let i = 0; i < 700; i++) {
+for (let i = 0; i < 1000; i++) {
     generateStar();
 }
 
@@ -76,6 +76,10 @@ function createButtonsOnCircle(pointsOnCircle) {
             window.open(project_links[index]);
         });
 
+        jQuery(btn).hover(function() {
+            jQuery(`#description-text-when-hover > #project-description-${index}`).toggle(500, function() {});
+        });
+
         return btn;
     });
 
@@ -87,7 +91,7 @@ const pointsOnCircle = getPointsOnCircle(5);
 console.log("pointsOnCircle", pointsOnCircle);
 
 const centralButton = document.getElementById("central-circle-button");
-
+let skillsDescription = document.getElementById("skills-description");
 
 // create a smaller button (linking to the code pages) inside each big circle button
 const bigButtons = createButtonsOnCircle(pointsOnCircle);
@@ -208,14 +212,11 @@ function createAboutMeButtonsOnCircle(pointsOnCircle) {
                 setTimeout( function() {
                     wind.document.title = about_me_links_pageName[index];
                 }, 10);
-                // wind.document.title = about_me_links_pageName[index];
-                // wind.document.write(`<html><head><title>${about_me_links_pageName[index]}</title></head></html>`);
-                // wind.document.close();
                 return false;
             });
         } else if (index == pointsOnCircle.length-1) {
             btn.addEventListener("click", function() {
-                jQuery("#skills-description").toggle(500, function() {
+                jQuery("#skills-description").toggle(800, function() {
                     counter++;
                 });
                 
@@ -271,7 +272,7 @@ jQuery(centralButton).one('click', function() {
 
 let clickCount = 0;
 
-centralButton.addEventListener("click", (event) => {
+centralButton.addEventListener("click", () => {
 
     clickCount++;
 
@@ -294,10 +295,9 @@ centralButton.addEventListener("click", (event) => {
     }
 
     if (clickCount % 2 == 0) {
-        let skillsDescription = document.getElementById("skills-description");
         if (counter % 2 == 1) {
-            jQuery("#skills-description").toggle(500, function() { 
-                counter++;
+            jQuery("#skills-description").toggle(800, function() { 
+            counter++;
             });
         }
     }
