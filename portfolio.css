@@ -46,6 +46,10 @@ a {
     transform: translate(-240px, 0px);
 }
 
+#name-presentation-text-small-screen {
+    display: none
+}
+
 #scope-presentation-text {
     /* width: 45%; */
     padding-right: 15px;
@@ -83,6 +87,10 @@ a {
     transform: translate(-38vw, 0);
     display: none;
     color: #fd902b;
+}
+
+.fa-envelope:hover {
+    
 }
 
 #center-container {
@@ -228,7 +236,7 @@ i.fa-spin {
 @media only screen and (min-width: 1450px) and (max-width: 1750px) {
 
     #contact-me2 {
-        transform: translate(-35vw, 0);
+        transform: translate(-37vw, 0);
     }
 
     #description-text-when-hover {
@@ -293,8 +301,8 @@ i.fa-spin {
     }
 
     #central-circle-button {
-        width: 230px;
-        height: 230px;
+        width: 210px;
+        height: 210px;
         font-size: 30px;
     }
 
@@ -328,17 +336,6 @@ i.fa-spin {
 
     .opening-text {
         display: none;
-        /* color: #2688f8;
-        position: absolute;
-        font-size: 26px;
-        font-family: 'Alegreya Sans', sans-serif;
-        letter-spacing: 1.15px;
-        text-shadow: 2px 2px 3px #256bbb;
-
-        flex-direction: column;
-        gap: 15px;
-        font-size: 48px;
-        line-height: 1.2; */
     }
 
     #name-presentation-text-small-screen {

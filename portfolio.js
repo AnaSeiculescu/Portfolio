@@ -32,8 +32,8 @@ let about_me_links = ["resume-cv-02.pdf", "story.pdf"];
 let about_me_links_pageName = ['Resume', 'Story'];
 
 if (jQuery(window).width() < 1050) {
-    RADIUS = 300;
-    myWorkBtnDimensions = [['260px', '260px'], ['200px', '200px'], ['230px', '230px'], ['170px', '170px'], ['200px', '200px']];
+    RADIUS = 275;
+    myWorkBtnDimensions = [['250px', '250px'], ['190px','190px'], ['220px', '220px'], ['160px', '160px'], ['190px', '190px']];
 }
 
 // 122°, 74%, 57%
@@ -144,13 +144,6 @@ function positionChildren() {
 
         codeBtnsPositions.forEach((position, i) => {
             codeButtons[i].style.transform = `translate(${position.x}, ${position.y})`;
-            // if (i == 2) {
-            //     // codeButtons[i].style.borderTop = "2px solid #838180";
-            //     // codeButtons[i].style.borderLeft = "2px solid #838180";
-
-            //     codeButtons[i].style.borderTop = "2px solid hsl(235, 74%, 60%)";
-            //     codeButtons[i].style.borderLeft = "2px solid hsl(235, 74%, 60%)";
-            // }
 
             codeButtons[i].style.borderTop = `3px solid ${myWorkBtnColors[i]}`;
             codeButtons[i].style.borderLeft = `3px solid ${myWorkBtnColors[i]}`;
@@ -216,9 +209,6 @@ function createAboutMeButtonsOnCircle(pointsOnCircle) {
 
         container.appendChild(btn);
 
-        // let descriptionTextWhenClickOrHover = document.getElementById("description-text-when-click-or-hover");
-        // let skillsDescription = document.getElementById("skills-description");
-
         if (index < pointsOnCircle.length-1) {
             btn.addEventListener("click", function() {
                 let wind = window.open(about_me_links[index], '_blank');
@@ -261,13 +251,19 @@ jQuery(centralButton).one('click', function() {
         console.log("the under construction sign is here");
     });
 
-    let openingText = document.getElementById("name-presentation-text-small-screen");
+    let openingTextSmallScreen = document.getElementById("name-presentation-text-small-screen");
+    let openingText = document.getElementsByClassName("opening-text");
     
-
     if (jQuery(window).width() < 1050) {
-        jQuery(openingText).toggle(1000, function() {
-            openingText.style.display = "none";
+        jQuery(openingTextSmallScreen).toggle(1000, function() {
+            openingTextSmallSCreen.style.display = "none";
         });
+    } else {
+        for (let i = 0; i < openingText.length; i++) {
+            jQuery(openingText[i]).toggle(1000, function() {
+                openingText[i].style.display = "none";
+            })
+        }
     }
 
     aboutMeText.textContent = "about me";
