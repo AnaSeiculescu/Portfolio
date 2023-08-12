@@ -31,7 +31,7 @@ a {
     border-radius: 50%;
 }
 
-.openning-text {
+.opening-text {
     /* color: #F19F4D; */
     color: #2688f8;
     position: absolute;
@@ -326,39 +326,58 @@ i.fa-spin {
         scale: 2;
     }
 
-    .openning-text {
+    .opening-text {
+        display: none;
+        /* color: #2688f8;
+        position: absolute;
+        font-size: 26px;
+        font-family: 'Alegreya Sans', sans-serif;
+        letter-spacing: 1.15px;
+        text-shadow: 2px 2px 3px #256bbb;
+
+        flex-direction: column;
+        gap: 15px;
+        font-size: 48px;
+        line-height: 1.2; */
+    }
+
+    #name-presentation-text-small-screen {
+        transform: translate(0vw, -30vh);
+        text-align: center;
+        display: flex;
+        color: #fd902b;
+        position: absolute;
+        font-family: 'Alegreya Sans', sans-serif;
+        letter-spacing: 1.15px;
+        text-shadow: 2px 2px 3px #256bbb;
+        flex-direction: column;
+        /* gap: 15px; */
+        font-size: 46px;
+        line-height: 1.3;
+        margin: 0 25px;
+    }
+
+    #name-text-small-screen {
+        color: #2688f8;
         font-size: 48px;
     }
 
-    #name-presentation-text {
-        transform: translate(0vw, -39vh);
-        text-align: center;
-    }
-
-    #scope-text {
+    #something-personal-small-screen {
+        font-size: 30px;
+        padding-top: 25px;
         display: none;
     }
     
-    #scope-presentation-text {
-        padding-right: 15px;
-        transform: translate(0vw, -28vh);
-        text-align: center;
-        padding-right: 30px;
-        /* width: 20%; */
+    #career-short-telling-small-screen {
+        font-size: 30px;
+        padding-top: 35px;
+        display: none;
     }
 
-    #something-personal {
-        font-size: 32px;
-        padding-top: 25px;
-    }
-    
-    #career-short-telling {
-        font-size: 32px;
-    }
-
-    #contact-me {
-        scale: 1.6;
-        margin: 20px;
+    #contact-me-small-screen {
+        scale: 1.2;
+        margin-top: 10px;
+        display: none;
     }
 
 }

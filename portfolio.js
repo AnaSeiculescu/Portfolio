@@ -261,17 +261,14 @@ jQuery(centralButton).one('click', function() {
         console.log("the under construction sign is here");
     });
 
-    let openningText = document.getElementsByClassName("openning-text");
-    for (let i = 0; i < openningText.length; i++) {
-        jQuery(openningText[i]).toggle(1000, function() {
-            openningText[i].style.display = "none";
-        })
-    }
+    let openingText = document.getElementById("name-presentation-text-small-screen");
+    
 
-    // jQuery("body").toggle(1000, function() {
-    //     body.style.display = "flex";
-    //     body.style.width = "100%";
-    // });
+    if (jQuery(window).width() < 1050) {
+        jQuery(openingText).toggle(1000, function() {
+            openingText.style.display = "none";
+        });
+    }
 
     aboutMeText.textContent = "about me";
     myWorkText.textContent = "my work";
@@ -337,12 +334,22 @@ jQuery(document).ready( function() {
     arrowsRotating.style.display = "none";
     underConstructionGif.style.display = "none";
 
-    setTimeout(function() {
-        jQuery('#something-personal, #career-short-telling, #contact-me').toggle(1000, function() {
-            somethingPersonal.style.display = "block";
-            careerShortTelling.style.display = "block";
-            contactMe.style.display = "block";
-        })
-    }, 2500);
+    if (jQuery(window).width() < 1050) {
+        setTimeout(function() {
+            jQuery('#something-personal-small-screen, #career-short-telling-small-screen, #contact-me-small-screen').toggle(1000, function() {
+                somethingPersonal.style.display = "block";
+                careerShortTelling.style.display = "block";
+                contactMe.style.display = "block";
+            })
+        }, 2500);
+    } else {
+        setTimeout(function() {
+            jQuery('#something-personal, #career-short-telling, #contact-me').toggle(1000, function() {
+                somethingPersonal.style.display = "block";
+                careerShortTelling.style.display = "block";
+                contactMe.style.display = "block";
+            })
+        }, 2500);
+    }
  
 });
