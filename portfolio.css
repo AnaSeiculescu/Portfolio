@@ -89,8 +89,33 @@ a {
     color: #fd902b;
 }
 
-.fa-envelope:hover {
+.fa-envelope:hover, .fa-github:hover, .fa-linkedin:hover {
+    scale: 1.4;
+}
+
+.fa-envelope {
+    position: relative;
+}
+
+.when-hover-envelope-parent {
+    position: absolute;
+    /* left: 20px; */
+    top: 20px;
+    width: max-content;
+}
+
+.when-hover-envelope {
+    display: none;
+    /* position: absolute; */
     
+    /* font-family: 'Averia Sans Libre', 'Alegreya Sans', sans-serif; */
+    font-size: 9px;
+    color: #2688f8;
+    /* width: max-content; */
+    /* border: 2px solid #fd902b; */
+    background-color: black;
+    line-height: 2;
+    letter-spacing: 1px;
 }
 
 #center-container {

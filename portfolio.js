@@ -256,7 +256,7 @@ jQuery(centralButton).one('click', function() {
     
     if (jQuery(window).width() < 1050) {
         jQuery(openingTextSmallScreen).toggle(1000, function() {
-            openingTextSmallSCreen.style.display = "none";
+            openingTextSmallScreen.style.display = "none";
         });
     } else {
         for (let i = 0; i < openingText.length; i++) {
@@ -349,3 +349,15 @@ jQuery(document).ready( function() {
     }
  
 });
+
+const faEnvelope = document.getElementsByClassName("fa-envelope");
+
+for (let i = 0; i < faEnvelope.length; i++) {
+    jQuery(faEnvelope[i]).hover(function() {
+        jQuery('.when-hover-envelope').toggle(300, function() {
+            
+        });
+    });
+}
+
+

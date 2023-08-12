@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <title>Contact Ana</title>
+        <script src="jquery-3.6.4.min.js"></script>
+        <!-- <script src="https://api.emailjs.com/api/v1.0/email/send"></script> -->
+
+        <style>
+
+            .stars {
+                position: absolute;
+                top: 0;
+                left: 0;
+                background-color: #C5C1C0;
+                width: 2px;
+                height: 2px;
+                border-radius: 50%;
+            }
+
+        </style>
+
+    </head>
+
+    <body style="background-color: #0A1612; overflow: hidden;">
+
+        <div id="content" style="position: absolute; width: 100vw; height: 100vh;">
+        </div>
+
+        <div id="contact" style="display: flex; flex-direction: column; justify-content: center; align-items: center; gap:20px; padding-top: 100px;">
+            <input type="text" id="name" placeholder="your name" style="width: 400px; height: 30px;">
+            <input type="email" id="email" placeholder="your email" style="width: 400px; height: 30px;">
+            <input type="text" id="subject" placeholder="subject" style="width: 400px; height: 30px;">
+            <textarea id="message" placeholder="message" style="width: 400px; height: 300px"></textarea>
+            <button id="send-button" style="width: 100px; height: 30px; margin-right: 275px;">Send</button>
+        </div>
+
+        
+
+        <script src="contact-me-form.js"></script>
+
+    </body>
+
+</html>
