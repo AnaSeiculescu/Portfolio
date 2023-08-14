@@ -28,7 +28,7 @@ let project_names = ['collection <br>map', 'color <br>picker', 'breakfast <br>re
 let project_code_links = ["https://github.com/AnaSeiculescu/collection-map", "https://github.com/AnaSeiculescu/ana_s_color_picker", "https://github.com/AnaSeiculescu/breakfast-recipes", "https://github.com/AnaSeiculescu/to-do-list", "https://anaseiculescu.github.io/about-me/"];
 let myWorkBtnDimensions = [['210px', '210px'], ['150px', '150px'], ['180px', '180px'], ['120px', '120px'], ['150px', '150px']]; 
 let myWorkBtnColors = [['hsl(120, 40%, 45%)'], ['hsl(358, 78%, 55%)'], ['hsl(235, 74%, 60%)'], ['hsl(29, 98%, 58%)'], ['hsl(180, 100%, 37%)']];
-let about_me_links = ["resume-cv-02.pdf", "story.pdf"];
+let about_me_links = ["resume-cv.pdf", "story.pdf"];
 let about_me_links_pageName = ['Resume', 'Story'];
 
 if (jQuery(window).width() < 1050) {
