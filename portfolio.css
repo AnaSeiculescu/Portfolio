@@ -6,15 +6,12 @@
 
 body {
     width: 85%;
-    /* width: 100vw; */
     display: flex;
     align-items: center;
     justify-content: space-around;
     height: 100vh;
     background-color: #0A1612;
     overflow: hidden;
-    /* position: relative; */
-    /* margin-right: 5%; */
 }
 
 a {
@@ -26,13 +23,12 @@ a {
     top: 0;
     left: 0;
     background-color: #C5C1C0;
-    width: 2px;
-    height: 2px;
+    width: 1.5px;
+    height: 1.5px;
     border-radius: 50%;
 }
 
 .opening-text {
-    /* color: #F19F4D; */
     color: #2688f8;
     position: absolute;
     font-size: 26px;
@@ -42,8 +38,7 @@ a {
 }
 
 #name-presentation-text {
-    /* width: 25%; */
-    transform: translate(-240px, 0px);
+    transform: translate(-250px, 0px);
 }
 
 #name-presentation-text-small-screen {
@@ -51,7 +46,6 @@ a {
 }
 
 #scope-presentation-text {
-    /* width: 45%; */
     padding-right: 15px;
     transform: translate(360px, 0px);
     text-align: right;
@@ -81,8 +75,6 @@ a {
 }
 
 #contact-me2 {
-    /* width: 105px;
-    height: 28px; */
     position: absolute;
     transform: translate(-38vw, 0);
     display: none;
@@ -99,20 +91,14 @@ a {
 
 .when-hover-envelope-parent {
     position: absolute;
-    /* left: 20px; */
     top: 20px;
     width: max-content;
 }
 
 .when-hover-envelope {
     display: none;
-    /* position: absolute; */
-    
-    /* font-family: 'Averia Sans Libre', 'Alegreya Sans', sans-serif; */
     font-size: 9px;
     color: #2688f8;
-    /* width: max-content; */
-    /* border: 2px solid #fd902b; */
     background-color: black;
     line-height: 2;
     letter-spacing: 1px;
@@ -121,6 +107,11 @@ a {
 #center-container {
     position: relative;
     display: flex;
+}
+
+#central-circle-button:hover{
+    scale: 1.08;
+    cursor: url('blue-finger-pointer-1.png'), auto;
 }
 
 .central-button-aboutme-up {
@@ -207,8 +198,7 @@ i.fa-spin {
     height: 130px;
     border-radius: 50%;
     display: none;
-    /* background-color: #D9D9D9; */
-    background-color: #256bbb;
+    background-color: #2170ca;
     color: white;
     box-shadow: inset -25px -25px 40px rgba(0,0,0,.8);
     font-family: 'Averia Sans Libre', 'Alegreya Sans', sans-serif;
@@ -239,7 +229,7 @@ i.fa-spin {
     color: #C5C1C0;
     transform: translate(38vw, -15vh);
     font-family: 'Averia Sans Libre', 'Alegreya Sans', sans-serif;
-    font-size: 17px;
+    font-size: 16px;
     display: flex;
     justify-content: center;
 }

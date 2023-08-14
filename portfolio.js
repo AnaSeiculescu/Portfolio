@@ -21,7 +21,7 @@ for (let i = 0; i < 1000; i++) {
     generateStar();
 }
 
-let RADIUS = 250; // adjust to screen size
+let RADIUS = 230; // adjust to screen size
 
 let project_links = ["https://anaseiculescu.github.io/collection-map/", "https://anaseiculescu.github.io/ana_s_color_picker/", "https://anaseiculescu.github.io/breakfast-recipes/", "https://anaseiculescu.github.io/to-do-list/", "https://anaseiculescu.github.io/about-me/"];
 let project_names = ['collection <br>map', 'color <br>picker', 'breakfast <br>recipes', 'to do <br>list', "math <br>calculator"];
@@ -222,7 +222,6 @@ function createAboutMeButtonsOnCircle(pointsOnCircle) {
                 jQuery("#skills-description").toggle(800, function() {
                     counter++;
                 });
-                
                 return false;
             });
         }
@@ -345,7 +344,7 @@ jQuery(document).ready( function() {
                 careerShortTelling.style.display = "block";
                 contactMe.style.display = "block";
             })
-        }, 2500);
+        }, 2000);
     }
  
 });

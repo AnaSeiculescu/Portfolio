@@ -24,18 +24,23 @@
 
     <body style="background-color: #0A1612; overflow: hidden;">
 
-        <div id="content" style="position: absolute; width: 100vw; height: 100vh;">
-        </div>
+        
 
         <div id="contact" style="display: flex; flex-direction: column; justify-content: center; align-items: center; gap:20px; padding-top: 100px;">
+            
             <input type="text" id="name" placeholder="your name" style="width: 400px; height: 30px;">
             <input type="email" id="email" placeholder="your email" style="width: 400px; height: 30px;">
             <input type="text" id="subject" placeholder="subject" style="width: 400px; height: 30px;">
             <textarea id="message" placeholder="message" style="width: 400px; height: 300px"></textarea>
             <button id="send-button" style="width: 100px; height: 30px; margin-right: 275px;">Send</button>
+
+            <div id="content" style="width: 100vw; height: 100vh;">
+            </div>
+
         </div>
 
-        
+        <div id="content" style="position: absolute; width: 100vw; height: 100vh;">
+        </div>
 
         <script src="contact-me-form.js"></script>
 
