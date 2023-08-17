@@ -167,6 +167,8 @@ i.fa-spin {
     letter-spacing: 0.7px;  
     border-radius: 50%;
     display: flex;
+    /* display: none; */
+    flex-direction: column;
     align-items: center;
     justify-content:space-around;
     background-color: #C5C1C0;
@@ -175,6 +177,24 @@ i.fa-spin {
     font-size: 17px;
     color: white;
 }
+
+/* .site-project-button-on {
+    position: absolute;
+    cursor: pointer;
+    text-align: center;
+    letter-spacing: 0.7px;  
+    border-radius: 50%;
+    display: flex;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content:space-around;
+    background-color: #C5C1C0;
+    box-shadow: inset -25px -25px 40px rgba(0,0,0,.8);
+    font-family: 'Averia Sans Libre', 'Alegreya Sans', sans-serif;
+    font-size: 17px;
+    color: white;
+} */
 
 .code-project-buttons {
     width: 60px;

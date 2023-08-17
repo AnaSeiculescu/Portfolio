@@ -71,6 +71,7 @@ function createButtonsOnCircle(pointsOnCircle) {
         btn.appendChild(btnTextContent);
         btn.style.transform = `translate(${x}px, ${y}px) translate(-50%, -50%)`;
         btn.classList.add("site-project-button");
+        btn.style.display = "none";
         btn.style.backgroundColor = myWorkBtnColors[index];
 
         btn.style.width = myWorkBtnDimensions[index][0];
@@ -293,11 +294,7 @@ centralButton.addEventListener("click", () => {
         });
     
         jQuery(myWorkButtons).toggle(1000, function() {
-            for (let i = 0; i < myWorkButtons.length; i++){
-                myWorkButtons[i].style.flexDirection = "column";
-            }
             console.log("the project buttons appear");
-            
         });
 
     }
